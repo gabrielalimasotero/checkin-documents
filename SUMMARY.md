@@ -24,13 +24,14 @@ Este sumário serve como índice navegável para toda a estrutura de documentaç
 - [user-flow.md](03-design/user-flow.md)
 
 ## 04. Arquitetura
-- [c4model/contexto.md](04-arquitetura/c4model/contexto.md)
-- [c4model/container.md](04-arquitetura/c4model/container.md)
-- [c4model/componente.md](04-arquitetura/c4model/componente.md)
-- [c4model/codigo.md](04-arquitetura/c4model/codigo.md)
-- [modelo-er.md](04-arquitetura/modelo-er.md)
+
+### 📦 Backend
 - [api-design.md](04-arquitetura/api-design.md)
 - [infraestrutura.md](04-arquitetura/infraestrutura.md)
+- [modelo-er.md](04-arquitetura/modelo-er.md)
+
+### 🎨 Frontend
+- [estrutura-componentes.md](04-arquitetura/estrutura-componentes.md)
 
 ## 05. Planejamento
 - [roadmap.md](05-planejamento/roadmap.md)
