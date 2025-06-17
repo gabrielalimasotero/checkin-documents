@@ -48,13 +48,13 @@ A aplicação é estruturada em uma arquitetura cliente-servidor, com integraç�
 
 A documentação completa está em [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs), organizada por tema:
 
-01-visao-geral/ → Proposta, problema, personas, diferencial
-02-requisitos/ → Histórias de usuário, critérios, backlog
-03-design/ → Identidade visual, wireframes, user-flow
-04-arquitetura/ → Frontend, backend, modelo de dados, C4
-05-planejamento/ → Roadmap, sprints, organização da equipe
-06-testes-validacao/ → Estratégias de validação, métricas
-99-anexos/ → Referências e materiais complementares
+- `01-visao-geral/` → Proposta, problema, personas, diferencial  
+- `02-requisitos/` → Histórias de usuário, critérios, backlog  
+- `03-design/` → Identidade visual, wireframes, user-flow  
+- `04-arquitetura/` → Frontend, backend, modelo de dados, C4  
+- `05-planejamento/` → Roadmap, sprints, organização da equipe  
+- `06-testes-validacao/` → Estratégias de validação, métricas  
+- `99-anexos/` → Referências e materiais complementares
 
 
 ---
