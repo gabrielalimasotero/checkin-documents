@@ -63,7 +63,7 @@ A documentação completa está em [`checkin-docs`](https://github.com/gabrielal
 
 - 🗂️ [Board de Tarefas no Trello (Scrumban)](https://trello.com/b/97MLpiuS/checkin-scrumban)
 - 🎨 [Protótipos no Figma](#) *(botar link)*
-- 📎 [Documentação da API interativa (Swagger)](botar link)
+- 📎 [Documentação da API interativa (Swagger)](http://127.0.0.1:8000)
 
 ---
 
