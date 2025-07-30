@@ -24,7 +24,7 @@ Os requisitos abaixo garantem que o sistema seja confiável, escalável, seguro 
 ## 📱 Usabilidade
 
 - A interface deve ser intuitiva para pessoas com pouca familiaridade com apps sociais.
-- Deve ser possível realizar a ação “Quero sair” com **no máximo 2 toques**.
+- Deve ser possível realizar a ação “Quero sair” com **no máximo 2 toques**, seria o For you.
 - A navegação deve seguir os princípios do design acessível (contraste, ícones compreensíveis, texto claro).
 - Feedbacks rápidos devem ser fornecidos após ações importantes (ex: check-in realizado, convite enviado).
 

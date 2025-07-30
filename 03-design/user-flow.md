@@ -1,125 +1,302 @@
-# 🧩 Wireframes – CheckIN (baseados no protótipo funcional)
+# User Flow - CheckIn App
 
-Os wireframes do CheckIN foram construídos no Lovable e representam o fluxo real da aplicação em protótipo navegável. A seguir estão descrições e capturas das principais telas.
+## 📱 Visão Geral do App
+
+O CheckIn é um aplicativo mobile que permite aos usuários fazer check-ins em estabelecimentos, gerenciar contas abertas, explorar lugares e pessoas, e manter uma rede social baseada em localização.
+
+## 🏗️ Estrutura de Navegação
+
+### **Navegação Principal**
+```
+┌─────────────────────────────────────┐
+│ Home | Check In | [+] | Social | Profile │
+└─────────────────────────────────────┘
+```
+
+### **Páginas Principais**
+- **Home** - Feed principal com 3 abas
+- **Check In** - Gerenciamento de check-ins e contas
+- **Social** - Exploração de pessoas e lugares
+- **Profile** - Perfil do usuário
+- **Botão [+]** - Check-in rápido
+
+## 🏠 Home Page
+
+### **Estrutura**
+```
+┌─────────────────────────────────────┐
+│ [Logo] CheckIn [🔍] [💬] [🔔]       │
+├─────────────────────────────────────┤
+│ [Explore] [Network] [For You]       │
+├─────────────────────────────────────┤
+│ Conteúdo da aba selecionada         │
+└─────────────────────────────────────┘
+```
+
+### **Aba Explore**
+- **Funcionalidade**: Descoberta de lugares e eventos
+- **Conteúdo**: Cards de estabelecimentos, eventos, atividades
+- **Ações**: Ver detalhes, reservar, favoritar
+
+### **Aba Network**
+- **Funcionalidade**: Rede social e conexões
+- **Conteúdo**: Posts de amigos, check-ins, atividades
+- **Ações**: Curtir, comentar, compartilhar
+
+### **Aba For You**
+- **Funcionalidade**: Sugestões personalizadas
+- **Conteúdo**: Feed de sugestões + botão "Quero sair"
+- **Fluxo "Quero sair"**:
+  ```
+  [Quero sair] → Filtros → Seleção/Exploração
+  ```
+
+#### **Fluxo "Quero sair" Detalhado**
+```
+1. [Quero sair] (1 toque)
+   ↓
+2. Filtros:
+   ├── 🚶 Sozinho → Feed filtrado
+   ├── 👥 Com amigos → Selecionar/Conhecer
+   ├── 💕 Encontro → Selecionar/Conhecer
+   └── 👨‍👩‍👧‍👦 Grupos → Selecionar/Conhecer
+   ↓
+3. Opções (para amigos/encontro/grupos):
+   ├── [Selecionar] → Lista de contatos
+   └── [Conhecer] → Tela de exploração
+```
+
+## 📍 Check In Page
+
+### **Estrutura**
+```
+┌─────────────────────────────────────┐
+│ Check-in                            │
+│ Gerencie suas experiências    [+]   │
+├─────────────────────────────────────┤
+│ [Geral] [Histórico] [Ativo]         │
+├─────────────────────────────────────┤
+│ Conteúdo da aba selecionada         │
+└─────────────────────────────────────┘
+```
+
+### **Aba Geral**
+- **Status Atual**: Card de destaque com check-in ativo
+- **Contas Abertas**: Amigos com contas não pagas
+- **Finalizados Hoje**: Amigos que concluíram check-ins
+- **Explorar Pessoas**: Botões para conhecer pessoas
+
+### **Aba Histórico**
+- **Histórico de Check-ins**: Lista de check-ins anteriores
+- **Avaliações**: Sistema de estrelas para estabelecimentos
+- **Ações**: Ver detalhes, avaliar, recheck-in
+
+### **Aba Ativo**
+- **Check-in Ativo**: Status atual do usuário
+- **Minha Conta**: Itens pedidos e status
+- **Pessoas Aqui**: Quem está no local
+- **Pessoas que Saíram**: Histórico de presença
+- **Vão Vir**: RSVPs confirmados
+
+## 👥 Social Page
+
+### **Estrutura**
+```
+┌─────────────────────────────────────┐
+│ [Logo] CheckIn [🔍] [💬] [🔔]       │
+├─────────────────────────────────────┤
+│ [Pessoas] [Lugares] [Eventos]       │
+├─────────────────────────────────────┤
+│ Conteúdo da aba selecionada         │
+└─────────────────────────────────────┘
+```
+
+### **Aba Pessoas**
+- **Exploração**: Descobrir pessoas próximas
+- **Filtros**: Por interesse, localização, disponibilidade
+- **Ações**: Conectar, enviar mensagem, ver perfil
+
+### **Aba Lugares**
+- **Estabelecimentos**: Lista de lugares próximos
+- **Filtros**: Por tipo, avaliação, distância
+- **Ações**: Ver detalhes, fazer check-in, favoritar
+
+### **Aba Eventos**
+- **Eventos**: Shows, festas, encontros
+- **Filtros**: Por data, tipo, localização
+- **Ações**: RSVP, ver detalhes, compartilhar
+
+## 👤 Profile Page
+
+### **Estrutura**
+```
+┌─────────────────────────────────────┐
+│ [Avatar] Nome do Usuário            │
+│ @username                           │
+├─────────────────────────────────────┤
+│ [Posts] [Check-ins] [Favoritos]     │
+├─────────────────────────────────────┤
+│ Conteúdo da aba selecionada         │
+└─────────────────────────────────────┘
+```
+
+### **Funcionalidades**
+- **Informações Pessoais**: Bio, interesses, localização
+- **Histórico**: Posts, check-ins, avaliações
+- **Configurações**: Privacidade, notificações, conta
+
+## 🔔 Notifications Page
+
+### **Estrutura**
+```
+┌─────────────────────────────────────┐
+│ Notificações                        │
+├─────────────────────────────────────┤
+│ Lista de notificações               │
+│ ├── Check-ins de amigos             │
+│ ├── Convites para eventos           │
+│ ├── Novas conexões                  │
+│ └── Atualizações de lugares         │
+└─────────────────────────────────────┘
+```
+
+## 🏪 Venue Details Page
+
+### **Estrutura**
+```
+┌─────────────────────────────────────┐
+│ [Imagem do lugar]                   │
+│ Nome do Estabelecimento             │
+│ ⭐⭐⭐⭐⭐ (4.8) • 1.2km              │
+├─────────────────────────────────────┤
+│ [Sobre] [Menu] [Fotos] [Avaliações] │
+├─────────────────────────────────────┤
+│ [Fazer Check-in] [Reservar]         │
+└─────────────────────────────────────┘
+```
+
+## 🔄 Fluxos Principais
+
+### **1. Fluxo de Check-in**
+```
+1. Usuário chega no local
+2. Abre o app → Check In
+3. [Fazer Check-in] ou Botão [+]
+4. Confirma localização
+5. Insere código da mesa (opcional)
+6. Check-in realizado
+7. Acesso ao menu e conta
+```
+
+### **2. Fluxo de Pedido**
+```
+1. Check-in ativo
+2. Aba Ativo → Minha Conta
+3. [Adicionar itens]
+4. Seleciona do menu
+5. Confirma pedido
+6. Acompanha status
+7. Paga conta
+```
+
+### **3. Fluxo de Exploração**
+```
+1. Home → For You
+2. [Quero sair]
+3. Escolhe filtro (sozinho/amigos/encontro/grupos)
+4. Seleciona ou explora
+5. Escolhe lugar/atividade
+6. Reserva ou faz check-in
+```
+
+### **4. Fluxo de Conexão Social**
+```
+1. Social → Pessoas
+2. Explora pessoas próximas
+3. Vê perfil de interesse
+4. [Conectar]
+5. Envia mensagem (opcional)
+6. Marca encontro
+```
+
+## 🎯 Pontos de Entrada
+
+### **Principais**
+- **Home**: Feed principal e descoberta
+- **Check In**: Gerenciamento de experiências
+- **Social**: Exploração e conexões
+- **Profile**: Perfil pessoal
+
+### **Secundários**
+- **Botão [+]**: Check-in rápido
+- **Notificações**: Atualizações e convites
+- **Venue Details**: Detalhes de estabelecimentos
+
+## 📱 Padrões de Interação
+
+### **Navegação**
+- **Bottom Navigation**: 5 itens principais
+- **Tabs**: Sub-navegação dentro das páginas
+- **Back Button**: Navegação hierárquica
+- **Swipe**: Navegação entre abas
+
+### **Ações**
+- **Tap**: Seleção e navegação
+- **Long Press**: Ações contextuais
+- **Swipe**: Ações rápidas (favoritar, excluir)
+- **Pull to Refresh**: Atualizar conteúdo
+
+### **Feedback**
+- **Loading States**: Indicadores de carregamento
+- **Success/Error**: Toasts e alertas
+- **Haptic Feedback**: Vibração para ações importantes
+- **Visual Feedback**: Animações e transições
+
+## 🔒 Estados do Usuário
+
+### **Não Autenticado**
+- Acesso limitado a funcionalidades básicas
+- Redirecionamento para login/registro
+
+### **Autenticado**
+- Acesso completo a todas as funcionalidades
+- Personalização baseada em histórico
+
+### **Check-in Ativo**
+- Acesso ao menu e pedidos
+- Visibilidade para amigos
+- Funcionalidades de pagamento
+
+## 📊 Métricas de Engajamento
+
+### **Principais**
+- **Check-ins realizados**
+- **Tempo de permanência**
+- **Interações sociais**
+- **Reservas e pedidos**
+
+### **Secundárias**
+- **Exploração de lugares**
+- **Conexões feitas**
+- **Avaliações deixadas**
+- **Compartilhamentos**
+
+## 🚀 Próximos Passos
+
+### **Funcionalidades Planejadas**
+- **Chat em tempo real**
+- **Pagamentos integrados**
+- **Recomendações avançadas**
+- **Gamificação**
+
+### **Melhorias de UX**
+- **Onboarding otimizado**
+- **Acessibilidade aprimorada**
+- **Performance mobile**
+- **Offline mode**
 
 ---
 
-## 🟢 Tela de Login / Acesso
-
-**Objetivo:** Permitir acesso rápido com Google ou e-mail.
-
-**Componentes:**
-
-- Logo do app
-- Botão “Continuar com Google”
-- Botão “Entrar com E-mail”
-- Link “Criar conta”
-
-📷 Referência: `screenshots/login.png`
-
----
-
-## 🏠 Feed Principal (Home). No menu inferior, o primeiro ícone.
-
-**Objetivo:** Centralizar convites, eventos, recomendações e postagens da rede.
-
-**Componentes:**
-
-- No primeiro header o nome do app na esquerda em cima.
-- Na direita, ícone de personalizar sugestões (círculo triplo).
-- Ao lado, ícone de notificações:
-- Aviso de amigos que fizeram check-ins públicos, curtidas e comentários em meus status, possivelmente comentários nas minhas avaliações.
-- Header com "Feed" e "Seguindo".
-- No Feed:
-- Campo Status “O que está rolando?” com 280 caracteres e opção de adicionar fotos.
-- Status dos amigos (posteriormente pode ser expandido)
-- Cards de convites com Aceitar(opção plus one)/Recusar e ocultar clicando no X do canto superior direito. 
-- Botões de reação: 💬 comentar, ❤️ curtir
-- Avaliações recentes de amigos com o nome do restaurante clicável pra visitar o perfil.
-- No Seguindo:
-- Cards de promoção de restaurantes que sigo ou recomendados com imagens
-- Postagens de Perfis públicos que sigo.
-
-📷 Referência: `screenshots/feed-convites.png`, `feed-promocoes.png`
-
----
-
-## 📍 Tela de Check-in
-
-**Objetivo:** Exibir presença ativa, pedidos em andamento e explorar amigos no local.
-
-**Componentes:**
-
-- Check-in ativo (ex: “Boteco da Maria”)
-- Sessão “Minha conta” com status dos pedidos
-- Lista de pessoas presentes
-- Botão para encerrar conta
-
-📷 Referência: `screenshots/checkin-ativo.png`, `conta-itens.png`, `dividir-pedido.png`
-
----
-
-## 🔔 Notificações
-
-**Objetivo:** Mostrar convites, atualizações e sugestões da IA.
-
-**Componentes:**
-
-- Convites com horário e local
-- Eventos baseados em interesses
-- Promoções personalizadas
-
-📷 Referência: `screenshots/notificacoes.png`
-
----
-
-## 🔎 Tela de Explorar
-
-**Objetivo:** Permitir descoberta ativa de lugares, pessoas e comunidades.
-
-**Aba “Lugares”**  
-- Categorias visuais (restaurantes, bares, shows, cafés)
-
-**Aba “Grupos”**  
-- Grupos por interesse com raio e próximos eventos
-
-**Aba “Pessoas”**  
-- Sugestões com % de compatibilidade, amigos em comum
-
-**Aba “Comunidades”**  
-- Criadores e influenciadores da cidade
-
-📷 Referência: `screenshots/explorar-lugares.png`, `explorar-grupos.png`, `explorar-pessoas.png`, `explorar-comunidades.png`
-
----
-
-## 👤 Tela de Perfil
-
-**Objetivo:** Gerenciar configurações, interesses e grupo do usuário.
-
-**Componentes:**
-
-- Avatar, nome, @, número de amigos e badges
-- Lista de interesses (editável)
-- Seus grupos (com status de admin ou participante)
-- Configurações: privacidade, notificações, check-in automático
-
-📷 Referência: `screenshots/perfil.png`, `perfil-configuracoes.png`
-
----
-
-## 💡 Observações
-
-- As telas seguem a paleta azul (PMS 546–550), com botões em verde escuro e tags em verde-água.
-- Todos os elementos têm cantos arredondados e estilo clean com foco em clareza.
-- Os wireframes foram validados em mobile e seguem o grid visual consistente.
-
----
-
-## 📂 Localização
-
-As capturas estão disponíveis na pasta:  
-`/03-design/screenshots/`  
-ou hospedadas no protótipo do Lovable:
-
-🌐 [checkin-social-hub.lovable.app](https://checkin-social-hub.lovable.app/home)
+**Versão**: 1.0  
+**Última atualização**: Dezembro 2024  
+**Status**: Implementado

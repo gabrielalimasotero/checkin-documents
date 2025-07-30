@@ -9,7 +9,7 @@ Os critérios abaixo definem as condições que devem ser verdadeiras para que a
 **História:** “Como um usuário indeciso, quero sugestões de lugares com base na vibe do momento...”
 
 **Critérios:**
-- [ ] O botão “Quero sair” deve estar visível e funcional na home.
+- [ ] O botão “For you” deve estar visível e funcional na home.
 - [ ] A IA deve retornar pelo menos 3 sugestões, com base em localização, horário e perfil.
 - [ ] As sugestões devem incluir: nome do local, distância, tags de vibe, horário e se há amigos presentes.
 - [ ] O usuário pode salvar, rejeitar ou favoritar sugestões.

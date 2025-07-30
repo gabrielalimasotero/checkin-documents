@@ -4,7 +4,7 @@
 Este projeto é dividido em três repositórios:
 
 - [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs) – Documentação e design
-- [`checkin-front`](https://github.com/CHMFC/checkin-front) – Aplicação mobile (React Native + Expo)
+- [`checkin-front`](https://github.com/gabrielalimasotero/checkin-frontend) – Aplicação mobile (React Native + Expo)
 - [`checkin-back`](https://github.com/CHMFC/checkin-back) – API backend (FastAPI + PostgreSQL)
 
 ---
@@ -14,7 +14,7 @@ Este projeto é dividido em três repositórios:
 ```bash
 # Clonar os três repositórios
 git clone https://github.com/gabrielalimasotero/checkin-docs.git
-git clone https://github.com/CHMFC/checkin-front.git
+git clone https://github.com/gabrielalimasotero/checkin-frontend
 git clone https://github.com/CHMFC/checkin-back.git
 ```
 

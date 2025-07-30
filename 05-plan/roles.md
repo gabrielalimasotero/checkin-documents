@@ -5,11 +5,10 @@ Este documento descreve as responsabilidades atribuídas a cada membro da equipe
 ---
 
 ## 👑 Gabriela Lima Sotero
-- **Função:** Líder de Equipe, PO, UX Writer e Design
+- **Função:** Líder de Equipe, PO, UX Writer, Design e Frontend Dev
 - **Responsabilidades:**
   - Organização da documentação no `checkin-docs`
-  - Criação da base de estilos visuais e estrutura do Figma
-  - Estruturação do Trello, sprints e RFP
+  - Criação da base de estilos visuais e estrutura
   - Interface com IA generativa, prompts e curadoria do conteúdo
   - Condução da visão geral do projeto e jornada do usuário
 
