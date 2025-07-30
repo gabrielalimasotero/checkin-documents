@@ -1,85 +1,128 @@
 
-# 🧱 Estrutura de Componentes – Frontend (React Native)
+# 🧱 Component Structure – Frontend (React + TypeScript)
 
-A aplicação CheckIN é desenvolvida em **React Native com Expo**, com estrutura modular e separação clara entre camadas de visual, lógica e dados.
+The CheckIn application is developed in **React with TypeScript and Vite**, with a modular structure and clear separation between visual, logic, and data layers.
 
 ---
 
-## 📁 Estrutura Geral de Pastas
+## 📁 General Folder Structure
 
 ```
-checkin-front/
-├── assets/              # Imagens, ícones, fontes
-├── components/          # Componentes reutilizáveis (botões, cards, tags)
-├── screens/             # Telas completas (Home, CheckIn, Explore, Profile)
-├── navigation/          # Stack e bottom tab navigator
-├── services/            # API, autenticação, IA e geolocalização
-├── contexts/            # Contextos globais (auth, user, IA)
-├── utils/               # Funções utilitárias (formato de data, validação)
-├── constants/           # Paleta de cores, textos fixos, rotas
-└── App.tsx              # Entry point com configuração inicial
+checkin-frontend/
+├── public/              # Static assets, images, icons
+├── src/
+│   ├── components/      # Reusable components (buttons, cards, badges)
+│   │   ├── ui/         # Shadcn/ui components
+│   │   ├── MainNavigation.tsx
+│   │   ├── TopHeader.tsx
+│   │   └── ...
+│   ├── pages/          # Main application pages
+│   │   ├── Welcome.tsx
+│   │   ├── Home.tsx
+│   │   ├── CheckIn.tsx
+│   │   ├── Social.tsx
+│   │   ├── Profile.tsx
+│   │   └── ...
+│   ├── contexts/       # React contexts (auth, user)
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utilities and design system
+│   ├── App.tsx         # Main application component
+│   └── main.tsx        # Application entry point
+├── package.json
+├── vite.config.ts
+└── tailwind.config.ts
 ```
 
 ---
 
-## 📦 Componentes Reutilizáveis
+## 📦 Reusable Components
 
-| Componente        | Uso principal                                           |
-|-------------------|---------------------------------------------------------|
-| `CardEvento`      | Exibe convites e eventos com RSVP                      |
-| `CardPromocao`    | Exibe promoções com imagem e tags                      |
-| `Tag`             | Representa vibe, categoria, interesse                  |
-| `AvatarUsuario`   | Foto ou inicial de usuários                            |
-| `BotaoPadrao`     | Botões primários e secundários                         |
-| `ModalConfirmacao`| Confirmação de check-in, saída ou convite              |
-| `BalaoMensagem`   | Ícones de comentário, curtir e notificações            |
-
----
-
-## 🔁 Navegação
-
-O app usa **React Navigation** com tabs e stacks:
-
-- `BottomTabNavigator` com as rotas:
-  - Feed (`HomeScreen`)
-  - Check-in (`CheckInScreen`)
-  - Explorar (`ExploreScreen`)
-  - Perfil (`ProfileScreen`)
-
-Cada rota possui stacks internas para detalhes (ex: evento, grupo, perfil de outro usuário).
+| Component        | Main Usage                                           |
+|------------------|------------------------------------------------------|
+| `Card`           | Standard card component with variants                |
+| `Button`         | Primary, secondary, outline, and ghost buttons      |
+| `Badge`          | Status indicators, tags, and labels                 |
+| `Avatar`         | User profile pictures or initials                    |
+| `Tabs`           | Tab-based navigation and content switching           |
+| `Dialog`         | Modals for confirmations and forms                   |
+| `Toast`          | Notification messages and feedback                   |
 
 ---
 
-## ☁️ Integrações
+## 🔁 Navigation
+
+The app uses **React Router DOM** with a mobile-first approach:
+
+- **Main Routes:**
+  - `/welcome` - Authentication and onboarding
+  - `/home` - Main dashboard with tabs
+  - `/checkin` - Venue check-ins and management
+  - `/social` - Social network and connections
+  - `/profile` - User profile and settings
+  - `/notifications` - Event reminders and updates
+  - `/messages` - Direct messaging
+
+- **Tab Navigation:**
+  - Home page has three tabs: "For You", "Network", "Explore"
+  - CheckIn page has four tabs: "Geral", "Histórico", "Ativo", "Cardápio"
+
+---
+
+## ☁️ Integrations
 
 - **API Backend (FastAPI):**
-  - Auth (login, cadastro, tokens)
-  - Eventos e convites
-  - Locais e check-ins
-  - Avaliações e notificações
+  - Authentication (login, registration, tokens)
+  - Events and invitations
+  - Venues and check-ins
+  - Ratings and notifications
 
-- **Serviços de IA (internos ou externos):**
-  - Sugestões com base em contexto
-  - Geração de tags
-  - Reordenação de feed
+- **Design System:**
+  - Shadcn/ui components
+  - Tailwind CSS for styling
+  - Custom design tokens and variants
 
-- **Geolocalização:**
-  - Consulta da posição atual
-  - Cálculo de raio de interesse
-  - Visualização de amigos e locais no mapa
-
----
-
-## 📐 Estilo e Responsividade
-
-- Usa **Tailwind-like** com styled-components ou framework interno
-- Adaptação automática para diferentes tamanhos de tela
-- Suporte ao modo escuro e claro com base na paleta azul (PMS)
+- **State Management:**
+  - React Context for global state
+  - React Query for server state
+  - Local state with useState and useReducer
 
 ---
 
-## 🧪 Testes e Validação
+## 📐 Styling and Responsiveness
 
-- Testes manuais com Expo Go
-- Captura de comportamento com eventos (cliques, tempo de decisão, navegação)
-- Feedback de usuários registrado para priorização
+- **Tailwind CSS** for utility-first styling
+- **Shadcn/ui** for consistent component library
+- **Mobile-first** responsive design
+- **Design tokens** for consistent spacing, colors, and typography
+- Support for light and dark modes based on the blue palette (#084d6e)
+
+---
+
+## 🧪 Testing and Validation
+
+- **Development:** Vite dev server with hot reload
+- **Build:** Vite for production builds
+- **Linting:** ESLint for code quality
+- **Type Checking:** TypeScript for type safety
+- **Design Validation:** Custom script to check design system consistency
+
+---
+
+## 🎨 Design System
+
+### Colors
+- **Primary:** #084d6e (Dark Blue)
+- **Background:** #ffffff (White)
+- **Text:** #000000 (Black)
+- **Muted:** #6b7280 (Gray)
+
+### Typography
+- **Headings:** Ubuntu font for specific titles
+- **Body:** Helvetica for all content
+- **Responsive:** Mobile-optimized font sizes
+
+### Components
+- **Cards:** Standard, compact, elevated variants
+- **Buttons:** Primary, secondary, outline, ghost
+- **Navigation:** Bottom navigation with icons
+- **Forms:** Consistent input styling and validation

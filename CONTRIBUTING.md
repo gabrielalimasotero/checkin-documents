@@ -1,83 +1,97 @@
 
-# 🤝 Como Contribuir com o CheckIN
+# 🤝 How to Contribute to CheckIn
 
-Antes de começar, obrigado por considerar contribuir com o CheckIN!
+Before you start, thank you for considering contributing to CheckIn!
 
-Este projeto é mantido por uma equipe central e contribuições externas são **bem-vindas**, mas passam por **curadoria e revisão** para garantir alinhamento com a visão geral.
-
----
-
-## ✅ O que você pode contribuir
-
-- Correções de bugs
-- Melhorias na documentação (ex: README, requisitos, arquitetura)
-- Sugestões de funcionalidades ou melhorias de usabilidade
-- Refatorações que mantenham o funcionamento existente
-- Casos de uso, feedbacks de UX e pontos cegos
+This project is maintained by a core team and external contributions are **welcome**, but go through **curation and review** to ensure alignment with the overall vision.
 
 ---
 
-## 🛠️ Como contribuir – Passo a passo
+## ✅ What you can contribute
 
-1. **Fork** este repositório
-2. Crie uma branch com um nome claro:
+- Bug fixes
+- Documentation improvements (e.g., README, requirements, architecture)
+- Feature suggestions or usability improvements
+- Refactoring that maintains existing functionality
+- Use cases, UX feedback, and blind spots
+
+---
+
+## 🛠️ How to contribute – Step by step
+
+1. **Fork** this repository
+2. Create a branch with a clear name:
 
 ```bash
-git checkout -b feat/sugestao-ia-contextual
+git checkout -b feat/venue-suggestions
 ```
 
-3. Faça suas alterações
-4. Faça commit das suas mudanças com uma mensagem descritiva:
+3. Make your changes
+4. Commit your changes with a descriptive message:
 
 ```bash
-git commit -m "feat: adiciona sugestão baseada em presença da rede"
+git commit -m "feat: add venue suggestions based on user preferences"
 ```
 
-5. Faça push da sua branch:
+5. Push your branch:
 
 ```bash
-git push origin feat/sugestao-ia-contextual
+git push origin feat/venue-suggestions
 ```
 
-6. Abra um **Pull Request (PR)** para a branch `main` do repositório original
+6. Open a **Pull Request (PR)** to the `main` branch of the original repository
 
 ---
 
-## 📌 Regras e boas práticas
+## 📌 Rules and best practices
 
-- Escreva commits claros e objetivos (`feat`, `fix`, `docs`, `refactor`, etc.)
-- Sempre explique no PR **o que foi alterado** e **por que**
-- Prefira mudanças menores e iterativas
-- Para grandes sugestões ou mudanças de rota, **abra uma issue primeiro**
-- Qualquer código deve ser funcional e seguir os padrões existentes
-
----
-
-## 🧪 Testes e verificação
-
-Antes de submeter um PR, certifique-se de que:
-
-- O projeto ainda roda localmente (consulte o `BUILD.md`)
-- Sua contribuição não quebra endpoints existentes ou o fluxo do app
-- A documentação foi atualizada (se necessário)
+- Write clear and objective commits (`feat`, `fix`, `docs`, `refactor`, etc.)
+- Always explain in the PR **what was changed** and **why**
+- Prefer smaller, iterative changes
+- For large suggestions or route changes, **open an issue first**
+- Any code should be functional and follow existing patterns
 
 ---
 
-## 💬 Feedback e Discussões
+## 🧪 Testing and verification
 
-Quer contribuir com ideias, fluxos ou design?  
-Abra uma issue com o tipo `discussão` ou mande sua proposta visual nos canais internos da equipe.
+Before submitting a PR, make sure that:
 
----
-
-## 👥 Contato com a Equipe
-
-- Gabriela Lima Sotero – PO e design
-- Henrique Fontaine – Arquiteto técnico
-- Repositório principal de documentação: [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs)
+- The project still runs locally (see `BUILD.md`)
+- Your contribution doesn't break existing endpoints or app flow
+- Documentation has been updated (if necessary)
+- Code follows the design system and component patterns
+- TypeScript types are properly defined
 
 ---
 
-## 📄 Licença
+## 🎨 Design System Guidelines
 
-Ao contribuir com este projeto, você concorda com os termos da [MIT License](./LICENSE).
+When contributing to the frontend:
+
+- Use the established design tokens (colors, spacing, typography)
+- Follow the Shadcn/ui component patterns
+- Maintain mobile-first responsive design
+- Use the primary color palette (#084d6e, white, black)
+- Follow the established folder structure and naming conventions
+
+---
+
+## 💬 Feedback and Discussions
+
+Want to contribute ideas, flows, or design?  
+Open an issue with the `discussion` type or send your visual proposal to the team's internal channels.
+
+---
+
+## 👥 Team Contact
+
+- Gabriela Lima Sotero – PO and design
+- Henrique Fontaine – Technical architect
+- Main documentation repository: [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs)
+
+---
+
+## 📄 License
+
+By contributing to this project, you agree to the terms of the [MIT License](./LICENSE).

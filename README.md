@@ -1,96 +1,95 @@
-# 📍 CheckIN – Plataforma de Descoberta Social com IA
+# 📍 CheckIn – Social Venue Check-in Platform
 
-**CheckIN** é uma aplicação web e mobile que une descoberta inteligente de lugares com conexão social baseada em contexto. Utilizando inteligência artificial generativa, o sistema sugere experiências reais de lazer com base na localização, preferências, presença de amigos e estilo de rolê.
+**CheckIn** is a modern mobile-first social platform that connects people through shared venue experiences. The app allows users to check into restaurants, bars, and venues while discovering new places and connecting with friends.
 
-Desenvolvido por uma equipe multidisciplinar, o projeto busca responder de forma prática às perguntas:
-- _“Pra onde eu vou sair hoje?”_
-- _“Com quem?”_
-
----
-
-## 🎯 Objetivos do Projeto
-
-- Reduzir o tempo de decisão para sair
-- Ajudar usuários a encontrar lugares ativos, seguros e com boa vibe
-- Permitir encontros sociais mais naturais e conectados ao momento
-- Oferecer suporte a estabelecimentos na organização de fluxo, reservas e divulgação
-- Proporcionar uma experiência fluida, leve e personalizada com ajuda da IA
+Developed as a React-based mobile application, CheckIn answers the practical questions:
+- _"Where should I go out today?"_
+- _"Who should I go with?"_
 
 ---
 
-## 🧱 Estrutura dos Repositórios
+## 🎯 Project Objectives
 
-Este projeto está dividido em três repositórios principais:
-
-| Repositório        | Finalidade                                           |
-|--------------------|------------------------------------------------------|
-| [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs)     | Documentação geral, design, requisitos e arquitetura |
-| [`checkin-front`](https://github.com/CHMFC/checkin-front)                | Aplicação mobile (React Native + Expo)               |
-| [`checkin-back`](https://github.com/CHMFC/checkin-back)                  | API backend (FastAPI + PostgreSQL)                   |
+- Reduce decision time for going out
+- Help users find active, safe places with good vibes
+- Enable more natural social encounters connected to the moment
+- Support venues in organizing flow, reservations, and promotion
+- Provide a smooth, light, and personalized experience
 
 ---
 
-## 🧩 Arquitetura e Design
+## 🧱 Repository Structure
 
-A aplicação é estruturada em uma arquitetura cliente-servidor, com integração de IA e foco em modularidade.
+This project is organized in the following repositories:
 
-📌 Diagramas disponíveis em:  
-[`checkin-docs/04-arquitetura/c4model`](https://github.com/gabrielalimasotero/checkin-docs/tree/main/04-arquitetura/c4model)
-
-- **Frontend:** Aplicativo em React Native via Expo
-- **Backend:** API RESTful com FastAPI, autenticação JWT e banco PostgreSQL
-- **Design System:** Identidade visual baseada em tons de pele (inclusão e calor humano)
-- **IA:** Geração de sugestões com base em comportamento e contexto
+| Repository        | Purpose                                           |
+|--------------------|---------------------------------------------------|
+| [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs)     | General documentation, design, requirements and architecture |
+| [`checkin-frontend`](https://github.com/CHMFC/checkin-frontend)          | Mobile application (React + TypeScript + Vite)   |
+| [`checkin-backend`](https://github.com/CHMFC/checkin-backend)            | API backend (FastAPI + PostgreSQL)               |
 
 ---
 
-## 📚 Para Navegar na Documentação
+## 🧩 Architecture and Design
 
-A documentação completa está em [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs), organizada por tema:
+The application is structured in a client-server architecture with a focus on mobile-first design and modularity.
 
-- `01-visao-geral/` → Proposta, problema, personas, diferencial  
-- `02-requisitos/` → Histórias de usuário, critérios, backlog  
-- `03-design/` → Identidade visual, wireframes, user-flow  
-- `04-arquitetura/` → Frontend, backend, modelo de dados, C4  
-- `05-planejamento/` → Roadmap, sprints, organização da equipe  
-- `06-testes-validacao/` → Estratégias de validação, métricas  
-- `99-anexos/` → Referências e materiais complementares
+📌 Diagrams available in:  
+[`checkin-docs/04-architecture/c4model`](https://github.com/gabrielalimasotero/checkin-docs/tree/main/04-architecture/c4model)
 
-
----
-
-## 🔗 Recursos Importantes
-
-- 🗂️ [Board de Tarefas no Trello (Scrumban)](https://trello.com/b/97MLpiuS/checkin-scrumban)
-- 🎨 [Protótipos no Figma](#) *(botar link)*
-- 📎 [Documentação da API interativa (Swagger)](http://127.0.0.1:8000)
+- **Frontend:** React application with TypeScript, Vite, and Shadcn/ui
+- **Backend:** RESTful API with FastAPI, JWT authentication, and PostgreSQL database
+- **Design System:** Visual identity based on dark blue (#084d6e), white, and black
+- **Mobile-First:** Optimized for mobile devices with responsive design
 
 ---
 
-## ⚙️ Como Rodar o Projeto Localmente
+## 📚 Documentation Navigation
 
-Consulte o arquivo [BUILD.md](./BUILD.md) para instruções completas de instalação e execução local dos três repositórios.
+Complete documentation is available in [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs), organized by theme:
+
+- `01-general/` → Proposal, problem, personas, differential  
+- `02-requirements/` → User stories, criteria, backlog  
+- `03-design/` → Visual identity, wireframes, user-flow  
+- `04-architecture/` → Frontend, backend, data model, C4  
+- `05-planning/` → Roadmap, sprints, team organization  
+- `06-tests-validation/` → Validation strategies, metrics  
+- `99-appendices/` → References and complementary materials
 
 ---
 
-## 🤝 Contribuição
+## 🔗 Important Resources
 
-Contribuições externas são bem-vindas, mas passam por curadoria da equipe original.  
-Veja as diretrizes em: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- 🗂️ [Task Board on Trello (Scrumban)](https://trello.com/b/97MLpiuS/checkin-scrumban)
+- 🎨 [Figma Prototypes](#) *(add link)*
+- 📎 [Interactive API Documentation (Swagger)](http://127.0.0.1:8000)
 
 ---
 
-## 👥 Equipe
+## ⚙️ How to Run the Project Locally
 
-- Gabriela Lima Sotero *(Líder de Equipe, PO, Designer)*
-- Henrique Fontaine *(Arquiteto Técnico e Dev Backend)*
+See the [BUILD.md](./BUILD.md) file for complete instructions on installing and running the three repositories locally.
+
+---
+
+## 🤝 Contribution
+
+External contributions are welcome but go through curation by the original team.  
+See guidelines in: [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+---
+
+## 👥 Team
+
+- Gabriela Lima Sotero *(Team Leader, PO, Designer)*
+- Henrique Fontaine *(Technical Architect and Backend Dev)*
 - João Pedro de Albuquerque Maranhão Marinho *(Frontend)*
 - João Victor Oliveira Santos *(Backend)*
-- Lucas Emmanuel Gomes de Lucena *(Modelagem e Infraestrutura)*
+- Lucas Emmanuel Gomes de Lucena *(Modeling and Infrastructure)*
 - Lucas Luis de Souza *(Frontend)*
 
 ---
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está licenciado sob a [MIT License](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE).

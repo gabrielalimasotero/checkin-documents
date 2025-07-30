@@ -1,106 +1,105 @@
 
-# ⚙️ BUILD – Como Rodar o Projeto Localmente
+# ⚙️ BUILD – How to Run the Project Locally
 
-Este projeto é dividido em três repositórios:
+This project is divided into three repositories:
 
-- [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs) – Documentação e design
-- [`checkin-front`](https://github.com/gabrielalimasotero/checkin-frontend) – Aplicação mobile (React Native + Expo)
-- [`checkin-back`](https://github.com/CHMFC/checkin-back) – API backend (FastAPI + PostgreSQL)
+- [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs) – Documentation and design
+- [`checkin-frontend`](https://github.com/gabrielalimasotero/checkin-frontend) – Mobile application (React + TypeScript + Vite)
+- [`checkin-backend`](https://github.com/CHMFC/checkin-backend) – API backend (FastAPI + PostgreSQL)
 
 ---
 
-## 🧱 1. Clonando os repositórios
+## 🧱 1. Cloning the repositories
 
 ```bash
-# Clonar os três repositórios
+# Clone the three repositories
 git clone https://github.com/gabrielalimasotero/checkin-docs.git
 git clone https://github.com/gabrielalimasotero/checkin-frontend
-git clone https://github.com/CHMFC/checkin-back.git
+git clone https://github.com/CHMFC/checkin-backend.git
 ```
 
 ---
 
-## 🧪 2. Rodando o Backend (FastAPI)
+## 🧪 2. Running the Backend (FastAPI)
 
-### Pré-requisitos
+### Prerequisites
 
 - Python 3.9+
 - PostgreSQL
 - pip + venv
 
-### Instruções
+### Instructions
 
 ```bash
-cd checkin-back
+cd checkin-backend
 
-# Criar e ativar o ambiente virtual
+# Create and activate virtual environment
 python -m venv venv
 source venv/bin/activate  # Windows: .\venv\Scripts\activate
 
-# Instalar dependências
+# Install dependencies
 pip install -r requirements.txt
 
-# Configurar variáveis de ambiente
+# Configure environment variables
 cp .env.example .env
-# Edite o .env com suas credenciais
+# Edit .env with your credentials
 
-# Aplicar migrações
+# Apply migrations
 alembic upgrade head
 
-# Rodar servidor
+# Run server
 uvicorn app.main:app --reload
 ```
 
-A API estará acessível em: http://127.0.0.1:8000  
-Documentação: `/docs` (Swagger) ou `/redoc`
+The API will be accessible at: http://127.0.0.1:8000  
+Documentation: `/docs` (Swagger) or `/redoc`
 
 ---
 
-## 📱 3. Rodando o Frontend (React Native + Expo)
+## 📱 3. Running the Frontend (React + TypeScript + Vite)
 
-### Pré-requisitos
+### Prerequisites
 
-- Node.js
-- Expo Go (no celular)
-- NPM ou Yarn
+- Node.js 18+ or Bun
+- NPM, Yarn, or Bun
 
-### Instruções
+### Instructions
 
 ```bash
-cd checkin-front
+cd checkin-frontend
 
-# Instalar dependências
-npm install  # ou yarn install
+# Install dependencies
+npm install  # or yarn install or bun install
 
-# Rodar o servidor Expo
-npx expo start
+# Run development server
+npm run dev  # or yarn dev or bun dev
 ```
 
-- Escaneie o QR Code com o app Expo Go no celular
-- Ou pressione `a` (Android) ou `i` (iOS) no terminal para rodar em emulador
+The application will be accessible at: http://localhost:5173
 
 ---
 
-## 📘 4. Visualizando a Documentação
+## 📘 4. Viewing the Documentation
 
-O repositório `checkin-docs` contém toda a documentação do projeto.  
-Você pode navegar pelos arquivos `.md` localmente ou hospedar com GitBook/Docsify.
+The `checkin-docs` repository contains all project documentation.  
+You can navigate through the `.md` files locally or host with GitBook/Docsify.
 
 ```bash
 cd checkin-docs
-# Abrir manualmente os arquivos ou usar uma ferramenta de visualização Markdown
+# Open files manually or use a Markdown viewing tool
 ```
 
 ---
 
-## 🧠 Dicas Adicionais
+## 🧠 Additional Tips
 
-- Use `.env.example` como base para suas variáveis de ambiente
-- O backend deve estar rodando para que o frontend funcione corretamente
-- Consulte o README de cada repositório para detalhes específicos
+- Use `.env.example` as a base for your environment variables
+- The backend must be running for the frontend to work properly
+- Check each repository's README for specific details
+- The frontend is optimized for mobile devices but works on desktop browsers
 
 ---
 
-## 📞 Suporte
+## 📞 Support
 
-Dúvidas ou problemas? Entre em contato com a equipe via Issues ou pelos canais internos.
+Questions or problems? Contact the team via Issues or internal channels.

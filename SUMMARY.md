@@ -1,51 +1,66 @@
 
-# 📚 Sumário da Documentação – CheckIN
+# 📚 Documentation Summary – CheckIn
 
-Este sumário serve como índice navegável para toda a estrutura de documentação do projeto CheckIN.
+This summary serves as a navigable index for the entire CheckIn project documentation structure.
 
 ---
 
-## 01. Visão Geral
-- [proposta-inicial.md](01-visao-geral/proposta-inicial.md)
-- [problema-oportunidade.md](01-visao-geral/problema-oportunidade.md)
-- [diferencial.md](01-visao-geral/diferencial.md)
-- [personas.md](01-visao-geral/personas.md)
+## 01. General Overview
+- [objective.md](01-general/objective.md)
+- [purpose.md](01-general/purpose.md)
+- [pitch.md](01-general/pitch.md)
+- [personas.md](01-general/personas.md)
 
-## 02. Requisitos
-- [historias-de-usuario.md](02-requisitos/historias-de-usuario.md)
-- [criterios-aceitacao.md](02-requisitos/criterios-aceitacao.md)
-- [requisitos-nao-funcionais.md](02-requisitos/requisitos-nao-funcionais.md)
-- [backlog-inicial.md](02-requisitos/backlog-inicial.md)
-- [priorizacao-moscow.md](02-requisitos/priorizacao-moscow.md)
+## 02. Requirements
+- [scenarios.md](02-requirements/scenarios.md)
+- [user-xp.md](02-requirements/user-xp.md)
+- [nfrs.md](02-requirements/nfrs.md)
+- [backlog.md](02-requirements/backlog.md)
+- [moscow.md](02-requirements/moscow.md)
 
 ## 03. Design
-- [identidade-visual.md](03-design/identidade-visual.md)
+- [ui.md](03-design/ui.md)
 - [wireframes.md](03-design/wireframes.md)
 - [user-flow.md](03-design/user-flow.md)
 
-## 04. Arquitetura
+## 04. Architecture
 
 ### 📦 Backend
-- [api-design.md](04-arquitetura/api-design.md)
-- [infraestrutura.md](04-arquitetura/infraestrutura.md)
-- [modelo-er.md](04-arquitetura/modelo-er.md)
+- [backend/](04-architecture/backend/)
 
 ### 🎨 Frontend
-- [estrutura-componentes.md](04-arquitetura/estrutura-componentes.md)
+- [frontend/estrutura-componentes.md](04-architecture/frontend/estrutura-componentes.md)
 
-## 05. Planejamento
-- [roadmap.md](05-planejamento/roadmap.md)
-- [sprints.md](05-planejamento/sprints.md)
-- [kanban-board.md](05-planejamento/kanban-board.md)
-- [papeis-equipe.md](05-planejamento/papeis-equipe.md)
-- [scrumban.md](05-planejamento/scrumban.md)
+## 05. Planning
+- [planning/](05-plan/)
 
-## 06. Testes e Validação
-- [testes-usabilidade.md](06-testes-validacao/testes-usabilidade.md)
-- [validacao-com-usuarios.md](06-testes-validacao/validacao-com-usuarios.md)
-- [metricas-sucesso.md](06-testes-validacao/metricas-sucesso.md)
+## 06. Tests and Validation
+- [tests/](06-tests/)
 
-## 99. Anexos
-- [fontes-de-pesquisa.md](99-anexos/fontes-de-pesquisa.md)
-- [links-referencias.md](99-anexos/links-referencias.md)
-- [outros.md](99-anexos/outros.md)
+## 99. Appendices
+- [appendices/](99-appendices/)
+
+---
+
+## 🚀 Quick Start
+
+1. **Read the [README.md](README.md)** for project overview
+2. **Check [BUILD.md](BUILD.md)** for setup instructions
+3. **Review [CONTRIBUTING.md](CONTRIBUTING.md)** for contribution guidelines
+
+---
+
+## 📱 Current Status
+
+- **Frontend:** React + TypeScript + Vite application
+- **Backend:** FastAPI + PostgreSQL API
+- **Design:** Dark blue (#084d6e) color palette with Shadcn/ui components
+- **Architecture:** Mobile-first responsive design
+
+---
+
+## 🔗 Important Links
+
+- [Frontend Repository](https://github.com/CHMFC/checkin-frontend)
+- [Backend Repository](https://github.com/CHMFC/checkin-backend)
+- [Task Board (Trello)](https://trello.com/b/97MLpiuS/checkin-scrumban)
