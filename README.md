@@ -24,9 +24,9 @@ This project is organized in the following repositories:
 
 | Repository        | Purpose                                           |
 |--------------------|---------------------------------------------------|
-| [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs)     | General documentation, design, requirements and architecture |
-| [`checkin-frontend`](https://github.com/CHMFC/checkin-frontend)          | Mobile application (React + TypeScript + Vite)   |
-| [`checkin-backend`](https://github.com/CHMFC/checkin-backend)            | API backend (FastAPI + PostgreSQL)               |
+| `checkin-documents/` | General documentation, design, requirements and architecture |
+| `checkin-frontend/`  | Mobile application (React + TypeScript + Vite)   |
+| `checkin-backend/`   | API backend (FastAPI + PostgreSQL)               |
 
 ---
 
@@ -34,12 +34,12 @@ This project is organized in the following repositories:
 
 The application is structured in a client-server architecture with a focus on mobile-first design and modularity.
 
-📌 Diagrams available in:  
-[`checkin-docs/04-architecture/c4model`](https://github.com/gabrielalimasotero/checkin-docs/tree/main/04-architecture/c4model)
+📌 Diagrams available in:
+`checkin-documents/04-architecture`
 
 - **Frontend:** React application with TypeScript, Vite, and Shadcn/ui
-- **Backend:** RESTful API with FastAPI, JWT authentication, and PostgreSQL database
-- **Design System:** Visual identity based on dark blue (#084d6e), white, and black
+- **Backend:** RESTful API with FastAPI, JWT (issued by email), PostgreSQL
+- **Design System:** Visual identity based on dark blue (#084d6e), white, black
 - **Mobile-First:** Optimized for mobile devices with responsive design
 
 ---
@@ -48,12 +48,12 @@ The application is structured in a client-server architecture with a focus on mo
 
 Complete documentation is available in [`checkin-docs`](https://github.com/gabrielalimasotero/checkin-docs), organized by theme:
 
-- `01-general/` → Proposal, problem, personas, differential  
-- `02-requirements/` → User stories, criteria, backlog  
-- `03-design/` → Visual identity, wireframes, user-flow  
-- `04-architecture/` → Frontend, backend, data model, C4  
-- `05-planning/` → Roadmap, sprints, team organization  
-- `06-tests-validation/` → Validation strategies, metrics  
+- `01-general/` → Proposal, problem, personas, differentiation
+- `02-requirements/` → User stories, criteria, backlog
+- `03-design/` → Visual identity, wireframes, user flow
+- `04-architecture/` → Frontend, backend, data model, C4
+- `05-plan/` → Roadmap, sprints, roles
+- `06-tests/` → Validation strategies, metrics
 - `99-appendices/` → References and complementary materials
 
 ---
@@ -62,20 +62,41 @@ Complete documentation is available in [`checkin-docs`](https://github.com/gabri
 
 - 🗂️ [Task Board on Trello (Scrumban)](https://trello.com/b/97MLpiuS/checkin-scrumban)
 - 🎨 [Figma Prototypes](#) *(add link)*
-- 📎 [Interactive API Documentation (Swagger)](http://127.0.0.1:8000)
+- 📎 Backend interactive API docs (Swagger): `http://localhost:8000/docs`
 
 ---
 
 ## ⚙️ How to Run the Project Locally
 
-See the [BUILD.md](./BUILD.md) file for complete instructions on installing and running the three repositories locally.
+1) Backend (FastAPI)
+```bash
+cd ../checkin-backend
+cp env.example .env
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+python run.py
+```
+
+2) Frontend (React)
+```bash
+cd ../checkin-frontend
+npm install
+cp .env.example .env.local # se existir; senão, crie e defina VITE_* conforme README
+npm run dev
+```
+
+3) Documents
+```bash
+cd ../checkin-documents
+# See this README and BUILD.md for details
+```
 
 ---
 
 ## 🤝 Contribution
 
-External contributions are welcome but go through curation by the original team.  
-See guidelines in: [CONTRIBUTING.md](./CONTRIBUTING.md)
+External contributions are welcome but curated by the original team.
+Guidelines: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ---
 
