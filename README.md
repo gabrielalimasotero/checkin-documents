@@ -42,6 +42,50 @@ The application is structured in a client-server architecture with a focus on mo
 - **Design System:** Visual identity based on dark blue (#084d6e), white, black
 - **Mobile-First:** Optimized for mobile devices with responsive design
 
+### Technology Stack
+
+Frontend (checkin-frontend):
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS + shadcn/ui + Radix UI
+- React Router DOM
+- TanStack React Query
+- Supabase Auth (`@supabase/supabase-js`)
+- Mapbox GL (para mapas)
+- Zod, React Hook Form, Lucide Icons
+
+Backend (checkin-backend):
+- FastAPI
+- SQLAlchemy (ORM)
+- PostgreSQL (via `psycopg[binary]`)
+- Auth JWT (`python-jose[cryptography]`)
+- `passlib[bcrypt]` (senhas), `email-validator`
+- Uvicorn (server)
+- CORS, dotenv
+
+API Contract (resumo do objeto Venue entregue ao front):
+```ts
+type Venue = {
+  id: string;
+  name: string;
+  description?: string | null;
+  category: string;
+  address?: string | null;
+  latitude?: string | null;   // string format from backend
+  longitude?: string | null;  // string format from backend
+  phone?: string | null;
+  website?: string | null;
+  hours?: string | null;
+  price_range?: string | null; // textual (ex.: "$", "R$ 20–40")
+  rating: number;
+  total_reviews: number;
+  image_url?: string | null;
+  tags?: string[] | null;
+  is_active: boolean;
+  features?: string | null;   // "Aceita cartão; Wi-fi gratuito; ..."
+}
+```
+
 ---
 
 ## 📚 Documentation Navigation
