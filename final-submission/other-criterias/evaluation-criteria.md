@@ -15,7 +15,6 @@ Sim. As principais salvaguardas estão definidas e alinhadas aos riscos mapeados
 ### [Transparência] Há preocupação em comunicar claramente como a IA funciona para os usuários?
 Sim. O produto comunica as bases das recomendações e limitações.
 - Justificativa “por que recomendado”, com critérios (aderência, distância, popularidade) e restrições atendidas.
-- Citação de fonte de dados (ex.: TripAdvisor) quando apresentar avaliações/ratings.
 - Mensagens claras quando a informação não estiver disponível; explicitar suposições/fallbacks.
 - Políticas de uso de dados e consentimento visíveis; opção de revisar/ajustar preferências.
 
