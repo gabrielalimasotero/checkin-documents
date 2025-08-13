@@ -11,25 +11,25 @@ Este canvas define a estratégia de escala massiva do CheckIn e seu impacto tran
 
 #### **Roadmap de Escala Global**
 ```yaml
-2024: "National Foundation"
+2025: "National Foundation"
   users: 100k MAU Brazil
   cities: 4 (SP, RJ, BH, BSB)
   establishments: 2,000
   revenue: R$ 2M ARR
   
-2025: "Regional Leadership"
+2026: "Regional Leadership"
   users: 500k MAU Brazil
   cities: 8 Brazil
   establishments: 10,000
   revenue: R$ 15M ARR
   
-2026: "LatAm Expansion"
+2027: "LatAm Expansion"
   users: 1.5M MAU (Brazil + Argentina + Chile)
   cities: 15 across 3 countries
   establishments: 25,000
   revenue: R$ 50M ARR
   
-2027: "Platform Domination"
+2028: "Platform Domination"
   users: 5M MAU LatAm
   cities: 30 across 5 countries
   establishments: 75,000
