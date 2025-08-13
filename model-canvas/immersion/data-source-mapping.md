@@ -1,50 +1,48 @@
-# Canvas de Mapeamento de Fontes de Dados - CheckIn
+# Canvas de Mapeamento de Fontes de Dados
 
-## Visão Geral
-Este canvas mapeia todas as fontes de dados necessárias para o funcionamento do CheckIn, identificando origens, qualidade, disponibilidade e estratégias de coleta para alimentar o sistema de recomendações por IA e funcionalidades sociais.
+Nota: Estruturado por fonte, seguindo o template (itens 1–12).
 
----
+### Fonte A: Perfis de Usuário (Interna)
+1. Nome da Fonte de Dados: Perfis de Usuário
+2. Descrição da Fonte de Dados: Dados cadastrais e preferências usadas para personalização e privacidade.
+3. Origem dos Dados: App CheckIN (onboarding e edição de perfil).
+4. Tipo de Dados: Textual, categórico, temporal (criação/atualização).
+5. Formato dos Dados: Tabelas SQL (`users`, `user_preferences`) em PostgreSQL (JSONB para preferências).
+6. Frequência de Atualização: Event-driven (onboarding/edições) e esporádica.
+7. Qualidade dos Dados: Alta; campos obrigatórios validados; possíveis lacunas em preferências.
+8. Métodos de Coleta: Formulários no app; coleta progressiva.
+9. Acesso aos Dados: API REST autenticada (`/users/me`, `/users/preferences`).
+10. Proprietário dos Dados: Produto/Aplicativo CheckIN (DPO indicado pela equipe).
+11. Restrições de Privacidade e Segurança: LGPD; consentimento; criptografia em trânsito/repouso; controle de acesso por escopos.
+12. Requisitos de Integração: DTOs tipados; mapeamento JSONB→features; versionamento de schema (migrations).
 
-## 1. Categorização de Dados Necessários
+### Fonte B: Check-ins e Avaliações (Interna)
+1. Nome da Fonte de Dados: Check-ins e Avaliações
+2. Descrição da Fonte de Dados: Registro de presença e feedback leve (rating, tags de vibe).
+3. Origem dos Dados: App CheckIN (tela de check-in; pós-visita).
+4. Tipo de Dados: Temporal, geoespacial, categórico, numérico.
+5. Formato dos Dados: Tabelas SQL (`checkins`, `reviews`, `review_tags`) em PostgreSQL.
+6. Frequência de Atualização: Tempo real por evento de usuário.
+7. Qualidade dos Dados: Alta para check-ins; média para avaliações (subjetivas); mitigada por volume/decay.
+8. Métodos de Coleta: Ações no app; QR code opcional; prompts pós-check-in.
+9. Acesso aos Dados: API REST (`/checkins`, `/venues/{id}/checkins`, `/reviews`).
+10. Proprietário dos Dados: Produto/Aplicativo CheckIN.
+11. Restrições de Privacidade e Segurança: Visibilidade configurável (público/amigos/privado); retenção mínima 6 meses.
+12. Requisitos de Integração: Normalização de tags; geofencing; agregações por janela temporal.
 
-### 1.1 Dados de Usuários
-**Dados Primários** (coletados diretamente):
-- Perfil básico (nome, idade, localização)
-- Preferências alimentares e restrições
-- Histórico de check-ins e avaliações
-- Padrões de comportamento (horários, tipos de local)
-- Conexões sociais (amigos, grupos)
-
-**Dados Comportamentais** (coletados por uso):
-- Tempo de permanência em locais
-- Frequência de uso do app
-- Padrões de navegação e interação
-- Feedback sobre sugestões da IA
-- Interações sociais (convites enviados/aceitos)
-
-### 1.2 Dados de Estabelecimentos
-**Dados Básicos**:
-- Nome, endereço, categoria, horário funcionamento
-- Cardápio e faixa de preço
-- Capacidade, tipo de ambiente
-- Contatos e informações de reserva
-
-**Dados Dinâmicos**:
-- Lotação em tempo real
-- Status operacional (aberto/fechado)
-- Promoções e eventos especiais
-- Avaliações e feedback recentes
-
-### 1.3 Dados Contextuais
-**Temporais**:
-- Horário atual, dia da semana
-- Feriados e eventos locais
-- Sazonalidade e tendências
-
-**Ambientais**:
-- Clima atual e previsão
-- Trânsito e tempo de deslocamento
-- Eventos próximos que podem afetar movimento
+### Fonte C: Interações Sociais e Convites (Interna)
+1. Nome da Fonte de Dados: Interações Sociais e Convites/RSVP
+2. Descrição da Fonte de Dados: Convites, confirmações de presença, mensagens e relacionamentos.
+3. Origem dos Dados: App CheckIN (abas Convites, Mensagens, Network).
+4. Tipo de Dados: Relacional, temporal, textual.
+5. Formato dos Dados: Tabelas SQL (`events`, `rsvps`, `friendships`, `messages`).
+6. Frequência de Atualização: Contínua, tempo real.
+7. Qualidade dos Dados: Alta; fluxos guiados; validações de estado.
+8. Métodos de Coleta: Ações do usuário; notificações contextuais.
+9. Acesso aos Dados: API REST (`/events`, `/events/{id}/attendees`, `/friendships`, `/messages`).
+10. Proprietário dos Dados: Produto/Aplicativo CheckIN.
+11. Restrições de Privacidade e Segurança: Consentimento; retenção mínima; opt-out de mensagens; criptografia.
+12. Requisitos de Integração: Webhooks para notificações; filas para fan-out; idempotência.
 
 ---
 
@@ -59,30 +57,47 @@ Este canvas mapeia todas as fontes de dados necessárias para o funcionamento do
 | **Interações Sociais** | Convites, RSVPs, mensagens | Contínua | Alta |
 | **Comportamento no App** | Cliques, tempo, fluxos | Contínua | Alta |
 
-### 2.2 Fontes Externas - APIs Públicas
-| Fonte | Tipo de Dado | API/Serviço | Custo | Limitações |
-|-------|--------------|-------------|-------|------------|
-| **Google Places** | Info estabelecimentos | Google Places API | $17/1000 requests | Rate limiting |
-| **Foursquare** | Check-ins, popularidade | Foursquare API | Freemium | Dados limitados |
-| **OpenWeather** | Clima atual/previsão | OpenWeather API | $1/1000 calls | Precisão regional |
-| **Google Maps** | Trânsito, distâncias | Google Maps API | $5/1000 requests | Cota diária |
-| **Eventbrite** | Eventos locais | Eventbrite API | Gratuito | Apenas eventos cadastrados |
+### Fonte D: Comportamento no App/Analytics (Interna)
+1. Nome da Fonte de Dados: Eventos de Uso/Analytics
+2. Descrição da Fonte de Dados: Cliques, tempo até decisão, uso de sugestões, salvamentos/rejeições.
+3. Origem dos Dados: SDK de analytics no app.
+4. Tipo de Dados: Temporal, categórico, numérico.
+5. Formato dos Dados: Eventos JSON (batch/stream) em data store (S3/BigQuery futuro).
+6. Frequência de Atualização: Quase tempo real (batch a cada 1–5 min).
+7. Qualidade dos Dados: Alta com esquema versionado; risco de perda em offline mitigado por fila local.
+8. Métodos de Coleta: Instrumentação de eventos; buffer e envio.
+9. Acesso aos Dados: Dashboard interno; exportação parquet/CSV.
+10. Proprietário dos Dados: Produto/Analytics.
+11. Restrições de Privacidade e Segurança: Pseudonimização; consentimento de tracking; retenção por finalidade.
+12. Requisitos de Integração: Dicionário de eventos; schema registry; jobs de transformação para métricas.
 
-### 2.3 Fontes Externas - Parcerias
-| Fonte | Tipo de Dado | Estratégia de Aquisição | Benefício Mútuo |
-|-------|--------------|------------------------|-----------------|
-| **Restaurantes Locais** | Cardápio, disponibilidade | Parceria direta | Visibilidade e reservas |
-| **Influenciadores Locais** | Recomendações curadas | Programa de embaixadores | Exposição e engajamento |
-| **Universidades** | Eventos acadêmicos | Parcerias institucionais | Engajamento estudantil |
-| **Centros Comerciais** | Eventos e promoções | Acordos comerciais | Marketing conjunto |
+### Fonte E: TripAdvisor (Externa)
+1. Nome da Fonte de Dados: TripAdvisor Venues
+2. Descrição da Fonte de Dados: Informações de estabelecimentos (nome, endereço, categoria, fotos, rating, reviews resumidas) usadas para catálogo inicial de venues.
+3. Origem dos Dados: TripAdvisor (APIs públicas limitadas/parcerias; onde necessário, coleta assistida respeitando ToS).
+4. Tipo de Dados: Textual, categórico, geoespacial.
+5. Formato dos Dados: JSON via API quando disponível; CSV/planilhas para importações; eventualmente HTML parseado sob conformidade.
+6. Frequência de Atualização: Importações periódicas (semanal/mensal); cache 30 dias para atributos estáticos.
+7. Qualidade dos Dados: Alta para metadados básicos; reviews podem estar desatualizados; complementar com dados internos.
+8. Métodos de Coleta: API/feeds oficiais; importação manual assistida; nunca scraping agressivo; respeito a robots/ToS.
+9. Acesso aos Dados: Serviço backend com normalização e cache Redis.
+10. Proprietário dos Dados: TripAdvisor; uso condicionado a licenças/ToS e atribuição.
+11. Restrições de Privacidade e Segurança: Sem PII; somente dados públicos/licenciados; auditoria de uso e retenção.
+12. Requisitos de Integração: Deduplicação com dados internos; normalização de categorias; mapeamento de IDs; controle de atualizações.
 
-### 2.4 Fontes Externas - Web Scraping
-| Fonte | Tipo de Dado | Método | Frequência | Riscos |
-|-------|--------------|--------|------------|--------|
-| **Instagram** | Posts geolocalizados | Hashtag scraping | Diária | Mudanças na API |
-| **Facebook Events** | Eventos públicos | Graph API | Semanal | Restrições de acesso |
-| **Sites de Estabelecimentos** | Cardápios atualizados | Web scraping | Semanal | Bloqueios, mudanças |
-| **TripAdvisor/Google Reviews** | Reviews recentes | Scraping cauteloso | Mensal | Violação de ToS |
+### Fonte F: OpenWeather (Externa)
+1. Nome da Fonte de Dados: OpenWeather
+2. Descrição da Fonte de Dados: Clima atual e previsão para contexto de recomendação.
+3. Origem dos Dados: API pública OpenWeather.
+4. Tipo de Dados: Numérico, temporal, categórico.
+5. Formato dos Dados: JSON via REST.
+6. Frequência de Atualização: 5–15 min; cache 15 min.
+7. Qualidade dos Dados: Alta; precisão varia por região.
+8. Métodos de Coleta: Chamadas REST programáticas.
+9. Acesso aos Dados: Serviço backend com cache Redis.
+10. Proprietário dos Dados: OpenWeather.
+11. Restrições de Privacidade e Segurança: Sem PII; chaves seguras; limites de uso.
+12. Requisitos de Integração: Normalização de códigos meteorológicos; fallback.
 
 ---
 
@@ -121,16 +136,19 @@ API Gateway → Rate Limiter → Cache Layer → Data Processor → Database
 - Graceful degradation quando APIs falham
 - Dados históricos como backup
 
-### 3.3 Parcerias - Estratégia de Relacionamento
-#### **Programa de Parceiros Estabelecimentos**
-- **Tier Gratuito**: Listagem básica + analytics simples
-- **Tier Premium**: Dashboard completo + reservas + promoções
-- **Incentivos**: Primeiros 50 estabelecimentos gratuitos por 6 meses
-
-#### **Influenciadores e Curadores**
-- Seleção baseada em engajamento e relevância local
-- Compensação: Visibilidade + experiências gratuitas
-- KPIs: Qualidade das recomendações + engajamento gerado
+### Fonte G: Google Maps Distance/Routes (Externa)
+1. Nome da Fonte de Dados: Google Maps Distance Matrix/Routes
+2. Descrição da Fonte de Dados: Distâncias, tempo de deslocamento e trânsito.
+3. Origem dos Dados: Google Maps Platform.
+4. Tipo de Dados: Numérico, temporal, geoespacial.
+5. Formato dos Dados: JSON via REST.
+6. Frequência de Atualização: Sob demanda; cache 5–15 min.
+7. Qualidade dos Dados: Alta.
+8. Métodos de Coleta: Chamadas REST; batching quando possível.
+9. Acesso aos Dados: Serviço backend; chaves geridas por vault.
+10. Proprietário dos Dados: Google.
+11. Restrições de Privacidade e Segurança: ToS; sem armazenar trajetos pessoais persistentemente.
+12. Requisitos de Integração: Geocoding consistente; quotas; tratamento de erros.
 
 ---
 
@@ -323,10 +341,3 @@ Raw Data → Feature Engineering → ML Pipeline → Recommendation Engine → U
 - **Fallback para dados históricos** quando APIs falham
 - **Modo degradado** com funcionalidades limitadas
 - **Partnerships de backup** para fontes críticas
-
----
-
-**Responsável**: Lucas Emmanuel Gomes de Lucena (Modeling e Infraestrutura)  
-**Colaboração**: Henrique Fontaine (Arquitetura Técnica)  
-**Revisão**: Mensal com base em qualidade e performance  
-**Última atualização**: Dezembro 2024

@@ -824,10 +824,3 @@ class FeedbackCollector:
 ```
 
 ---
-
-**Responsável Geral**: Gabriela Lima Sotero (CEO/PO)  
-**Tech Lead**: Henrique Fontaine (CTO)  
-**DevOps**: Lucas Emmanuel (Infrastructure)  
-**Marketing**: Gabriela + External Agency  
-**Launch Date**: Q1 2024  
-**Última atualização**: Dezembro 2024

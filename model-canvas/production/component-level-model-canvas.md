@@ -844,8 +844,3 @@ jobs:
 ```
 
 ---
-
-**Responsável**: Henrique Fontaine (Arquiteto Técnico)  
-**Colaboração**: Equipe de Desenvolvimento  
-**Manutenção**: Revisão mensal da arquitetura  
-**Última atualização**: Dezembro 2024

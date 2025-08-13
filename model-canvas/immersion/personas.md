@@ -383,9 +383,3 @@ Este canvas documenta as personas identificadas para o CheckIn através de pesqu
 4. **Iterar personas** baseado em feedback real de produto
 
 ---
-
-**Metodologia**: Design Thinking + Jobs-to-be-Done  
-**Responsável**: Gabriela Lima Sotero (UX Research & PO)  
-**Validação**: 12 entrevistas + 127 questionários + 3 grupos focais  
-**Atualização**: Trimestral baseada em dados de uso  
-**Última revisão**: Dezembro 2024

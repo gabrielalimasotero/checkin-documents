@@ -191,7 +191,3 @@ O CheckIn vai além de ser um app de descoberta - é um assistente inteligente q
 
 ---
 
-**Responsável pela execução:** Equipe CheckIn  
-**Revisão:** Quinzenal nas retrospectivas de sprint  
-**Aprovação:** PO (Gabriela Lima Sotero)  
-**Data de criação:** Dezembro 2024

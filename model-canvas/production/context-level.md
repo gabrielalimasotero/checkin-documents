@@ -596,8 +596,3 @@ class ContextMigrationManager:
 
 ---
 
-**Domain Expert**: Gabriela Lima Sotero (PO/Business Context)  
-**Technical Architect**: Henrique Fontaine (Technical Context)  
-**Compliance Officer**: Lucas Emmanuel (Data/Security Context)  
-**Monitoring Lead**: João Victor (Operational Context)  
-**Última atualização**: Dezembro 2024

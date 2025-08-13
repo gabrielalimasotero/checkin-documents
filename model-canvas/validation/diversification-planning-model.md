@@ -531,8 +531,4 @@ CheckIn Travel:
 
 ---
 
-**Responsável Estratégico**: Gabriela Lima Sotero (CEO)  
-**Execution Lead**: Henrique Fontaine (CTO)  
-**Market Research**: External consultancy + internal analysis  
-**Review Cycle**: Mensal para métricas, trimestral para estratégia  
-**Última atualização**: Dezembro 2024
+

@@ -1138,8 +1138,3 @@ jobs:
 ```
 
 ---
-
-**Responsável**: Lucas Emmanuel (Infrastructure) + Henrique Fontaine (Architecture)  
-**Manutenção**: Revisão mensal da arquitetura de containers  
-**Monitoramento**: 24/7 via Prometheus + Grafana  
-**Última atualização**: Dezembro 2024

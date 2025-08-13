@@ -886,9 +886,3 @@ class FeedbackROICalculator:
 
 ---
 
-**Responsável**: Gabriela Lima Sotero (PO/Customer Voice)  
-**Analysis Lead**: João Victor (Data Analytics)  
-**Implementation**: Henrique Fontaine (Technical Integration)  
-**Community Management**: Lucas Luis (User Communication)  
-**Review Cycle**: Semanal para operações, mensal para estratégia  
-**Última atualização**: Dezembro 2024

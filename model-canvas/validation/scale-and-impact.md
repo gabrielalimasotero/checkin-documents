@@ -922,11 +922,3 @@ Global Transformation:
 ```
 
 ---
-
-**Visionary Lead**: Gabriela Lima Sotero (CEO)  
-**Impact Measurement**: João Victor (Data Science) + External research partners  
-**Global Strategy**: Henrique Fontaine (CTO) + International advisors  
-**Sustainability**: Lucas Emmanuel (Operations) + ESG consultants  
-**Review Cycle**: Anual para impact report, semestral para métricas de escala  
-**Legacy Review**: Quinquenal com stakeholders externos  
-**Última atualização**: Dezembro 2024

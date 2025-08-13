@@ -983,10 +983,3 @@ class ActiveLearningSystem:
 ```
 
 ---
-
-**Responsável ML**: Henrique Fontaine (CTO/ML Lead)  
-**Data Engineering**: Lucas Emmanuel  
-**ML Engineering**: João Victor  
-**Product Metrics**: Gabriela Lima Sotero  
-**Review Cycle**: Semanal para modelos, mensal para pipeline  
-**Última atualização**: Dezembro 2024

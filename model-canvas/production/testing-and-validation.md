@@ -1447,10 +1447,3 @@ if __name__ == "__main__":
 ```
 
 ---
-
-**Responsável QA**: João Pedro (QA Lead)  
-**Test Automation**: João Victor (Backend) + Lucas Luis (Frontend)  
-**Performance Testing**: Lucas Emmanuel (DevOps)  
-**Security Testing**: Henrique Fontaine (CTO)  
-**Review Cycle**: Semanal para cobertura, diário para pipeline  
-**Última atualização**: Dezembro 2024

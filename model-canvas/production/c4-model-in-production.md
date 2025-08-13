@@ -794,9 +794,3 @@ class ProductionHealthCheck:
 
 ---
 
-**Arquiteto Responsável**: Henrique Fontaine (CTO)  
-**Infrastructure Lead**: Lucas Emmanuel  
-**Monitoring Lead**: João Victor  
-**Business Stakeholder**: Gabriela Lima Sotero  
-**Review Cycle**: Mensal  
-**Última atualização**: Dezembro 2024

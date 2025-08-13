@@ -1,38 +1,59 @@
-# Canvas de Identificação de Domínio - CheckIn
+# Canvas de Identificação do Domínio
 
 ## Visão Geral
 Este canvas define e mapeia o domínio de atuação do CheckIn, estabelecendo fronteiras claras, identificando subdomínios críticos e mapeando as regras de negócio que governam cada área da plataforma social de check-in.
 
 ---
 
-## 1. Definição do Domínio Principal
+### 1. Nome do Domínio
 
-### 1.1 Core Domain - Descoberta Social Contextual
-**Definição**: Facilitar decisões de "onde sair" através de recomendações inteligentes baseadas em contexto pessoal, social e temporal, conectando pessoas a experiências autênticas em estabelecimentos físicos.
+- Descoberta Social Contextual e Coordenação de Saídas em Estabelecimentos
 
-**Bounded Context**: Decisão assistida por IA + Coordenação social + Experiência em estabelecimentos
+### 2. Descrição do Domínio
 
-**Invariantes do Domínio**:
-- Todo usuário tem um contexto único (localização, hora, humor, companhia)
-- Recomendações devem ser relevantes ao contexto atual
-- Experiências sociais devem respeitar preferências de privacidade
-- Estabelecimentos devem ter informações atualizadas e precisas
-
-### 1.2 Domínios Adjacentes (Fora do Escopo)
-**Não fazemos**:
-- ❌ Delivery de comida (iFood, Uber Eats)
-- ❌ Reservas de hospedagem (Airbnb, Booking)
-- ❌ Transporte para os locais (Uber, 99)
-- ❌ Pagamentos diretos (PicPay, carteiras digitais)
-- ❌ Reviews detalhadas de comida (Zomato, TripAdvisor)
-
-**Fazemos integração/parceria quando necessário**
+- Plataforma que ajuda pessoas a decidirem “para onde sair agora” com base em contexto pessoal (horário, localização, companhia, orçamento, restrições), sinais sociais (amigos/grupos, convites, RSVPs) e informações de estabelecimentos (catálogo inicial via TripAdvisor), com suporte a check-in/avaliações e privacidade controlada.
 
 ---
 
-## 2. Subdomínios Identificados
+### 3. Justificativa da Escolha
 
-### 2.1 Subdomínio Core: Recommendation Engine
+- Alto impacto no problema de paralisia de escolha e frustração com rolês inadequados.
+- Relevância de negócio: aumenta engajamento, retenção e cria valor B2B para estabelecimentos (visibilidade, fluxo, reservas no futuro).
+- Viabilidade técnica: stack atual (React + FastAPI), dados de venues (TripAdvisor), sinais internos (check-ins/avaliações) e LLM para curadoria explicável.
+
+---
+
+## 4. Problemas/Desafios Atuais
+
+### 4.1 Principais Problemas
+- Fragmentação de fontes e falta de contexto em tempo real (vibe, lotação, presença de amigos).
+- Informações desatualizadas e heterogêneas; normalização e deduplicação de venues (TripAdvisor x internos).
+- Privacidade e consentimento de presença/visibilidade; configurações granulares.
+- Cold start de dados para novas regiões/usuários; escassez inicial de sinais sociais.
+- Coordenação social trabalhosa (convites/RSVP) e baixa taxa de confirmação.
+- Constrangimentos de ToS/licenciamento de dados externos; quotas e latência móvel.
+
+---
+
+## 5. Oportunidades de IA Generativa
+
+### 5.1 Onde aplicar IA
+- Assistente conversacional para coleta de contexto e geração de 2–3 sugestões com explicação.
+- Re-ranking explicável do motor de recomendação (contexto + sinais sociais + LLM).
+- Sumarização/normalização semântica de descrições e reviews de venues (TripAdvisor) para “vibe”.
+- Geração de convites/mensagens contextuais e sugestão de locais compatíveis ao grupo.
+- Criação de “roteiros leves” (ex.: jantar → bar) quando pertinente.
+- Coleta de feedback leve (salvar/rejeitar) e aprendizado contínuo.
+
+---
+
+## 6. Benefícios Esperados
+
+- Redução do tempo até decisão (objetivo ≤ 2 min no fluxo “Quero sair”).
+- Maior assertividade e satisfação com os rolês; aumento de check-ins/RSVPs.
+- Engajamento social e recorrência; efeito de rede.
+- Valor para estabelecimentos (descoberta qualificada) e base de dados rica para curadoria.
+- Diferencial competitivo: descoberta com contexto e explicabilidade.
 **Responsabilidade**: Gerar sugestões personalizadas baseadas em contexto
 
 **Entidades Principais**:
@@ -445,9 +466,3 @@ Dados de estabelecimento são considerados válidos quando:
 - Gamificação de interações sociais
 
 ---
-
-**Domain Expert**: Gabriela Lima Sotero (PO)  
-**Technical Architect**: Henrique Fontaine  
-**Domain Modeling**: Lucas Emmanuel Gomes de Lucena  
-**Validation**: Equipe completa + stakeholders  
-**Última atualização**: Dezembro 2024

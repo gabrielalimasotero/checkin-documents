@@ -1086,10 +1086,3 @@ Operational Efficiency:
 ```
 
 ---
-
-**Responsável**: Henrique Fontaine (CTO - Technical Scalability)  
-**Co-responsável**: Gabriela Lima Sotero (CEO - Business Scalability)  
-**Infrastructure Lead**: Lucas Emmanuel (DevOps/SRE)  
-**Review Cycle**: Mensal para métricas, trimestral para estratégia  
-**Decision Gates**: Go/No-Go trimestral baseado em readiness framework  
-**Última atualização**: Dezembro 2024

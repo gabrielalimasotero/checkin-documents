@@ -398,9 +398,3 @@ Reduzir o tempo e a ansiedade envolvidos em decidir onde sair, aumentando a sati
 - 🎯 R$ 50k MRR
 
 ---
-
-**Dono dos Objetivos**: Gabriela Lima Sotero (CEO/PO)  
-**Accountability**: Mensal com board + investidores  
-**Revisão**: Trimestral com ajustes baseados em learnings  
-**Aprovação**: Consenso da equipe de liderança  
-**Última atualização**: Dezembro 2024

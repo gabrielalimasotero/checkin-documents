@@ -721,10 +721,3 @@ class PortfolioHealthDashboard:
 
 ---
 
-**Responsável Estratégico**: Gabriela Lima Sotero (CEO)  
-**Execution Lead**: Henrique Fontaine (CTO)  
-**International Expansion**: External consultant + internal team  
-**Market Research**: Mixed internal/external approach  
-**Review Cycle**: Mensal para operações, trimestral para estratégia  
-**Decision Gates**: Go/No-Go a cada 6 meses por mercado  
-**Última atualização**: Dezembro 2024
