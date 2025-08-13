@@ -369,28 +369,28 @@ Reduzir o tempo e a ansiedade envolvidos em decidir onde sair, aumentando a sati
 
 ## 10. Roadmap de Objetivos
 
-### 10.1 Q1 2024: Validação (MVP)
+### 10.1 Q1 2025: Validação (MVP)
 **Foco**: Validar product-market fit
-- ✅ 500 usuários ativos testando core features
-- ✅ IA com 70% de precisão
+- ✅ 50 usuários ativos testando core features
+- ✅ IA com 60% de precisão
 - ✅ 25 estabelecimentos piloto
 - ✅ NPS > 50
 
-### 10.2 Q2 2024: Tração
+### 10.2 Q2 2026: Tração
 **Foco**: Crescimento inicial sustentável
 - 🎯 2.000 usuários ativos mensais
 - 🎯 IA com 75% de precisão
 - 🎯 50 estabelecimentos + 10 premium
 - 🎯 R$ 10k MRR
 
-### 10.3 Q3 2024: Crescimento
+### 10.3 Q3 2026: Crescimento
 **Foco**: Escalar operação validada
 - 🎯 5.000 usuários ativos mensais
 - 🎯 IA com 80% de precisão
 - 🎯 100 estabelecimentos + 25 premium
 - 🎯 R$ 25k MRR
 
-### 10.4 Q4 2024: Expansão
+### 10.4 Q4 2027: Expansão
 **Foco**: Preparar para escala
 - 🎯 10.000 usuários ativos mensais
 - 🎯 IA com 85% de precisão

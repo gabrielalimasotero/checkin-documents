@@ -427,7 +427,7 @@ CEO/PO (Gabriela)
 
 ### 7.1 Cronograma Executivo
 
-#### **2024: Ano da Expansão Nacional**
+#### **2026: Ano da Expansão Nacional**
 ```
 Q1: Preparação
 - Finalizar validação do core em SP
@@ -447,7 +447,7 @@ Q4: Brasília + Travel MVP
 - MVP de Travel em SP/RJ
 ```
 
-#### **2025: Ano da Diversificação**
+#### **2027: Ano da Diversificação**
 ```
 Q1: Consolidação Nacional
 - Otimização de todas as cidades brasileiras

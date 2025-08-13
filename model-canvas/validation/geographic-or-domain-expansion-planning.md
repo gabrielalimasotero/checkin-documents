@@ -60,119 +60,8 @@ class MarketEvaluationFramework:
 
 ### 1.2 Mercados Prioritários - Brasil
 
-#### **Tier 1: Expansão Nacional Imediata (2024)**
+Nordeste, a começar por Recife.
 
-**1. Rio de Janeiro**
-- **População**: 6.7M (região metropolitana)
-- **Target Demographic**: 1.2M usuários potenciais (18-40 anos, classe B/C)
-- **Market Readiness**: 95% smartphone penetration, alta adoção de apps
-- **Competition**: Baixa (sem player dominante)
-- **Investment Required**: R$ 150k
-- **Timeline**: Q2 2024
-- **Expected ROI**: 200% em 12 meses
-
-**Estratégia de Entrada**:
-```yaml
-Fase 1 (Mês 1-2): Pesquisa e Setup
-  - Mapeamento de 500 estabelecimentos
-  - Parcerias com 3 influenciadores cariocas
-  - Adaptação linguística ("rolê" vs "programa")
-  - Setup de infraestrutura regional
-
-Fase 2 (Mês 3): Beta Launch
-  - 100 beta testers recrutados via Instagram
-  - 25 estabelecimentos piloto onboarded
-  - Teste de precisão da IA com contexto carioca
-  
-Fase 3 (Mês 4-6): Public Launch
-  - Marketing digital focado em Zona Sul/Barra
-  - Eventos de lançamento em 5 bairros principais
-  - Meta: 2.000 MAU em 6 meses
-```
-
-**2. Belo Horizonte**
-- **População**: 2.7M (região metropolitana)
-- **Target Demographic**: 450k usuários potenciais
-- **Market Readiness**: 90% smartphone, forte cultura gastronômica
-- **Competition**: Muito baixa
-- **Investment Required**: R$ 100k
-- **Timeline**: Q3 2024
-- **Expected ROI**: 250% em 12 meses
-
-**3. Brasília**
-- **População**: 3.1M (DF)
-- **Target Demographic**: 600k usuários potenciais
-- **Market Readiness**: Alta renda, tech-friendly
-- **Competition**: Baixa
-- **Investment Required**: R$ 120k
-- **Timeline**: Q4 2024
-- **Expected ROI**: 180% em 12 meses
-
-#### **Tier 2: Expansão Regional (2025)**
-
-**4. Porto Alegre**
-- **Rationale**: Forte cultura gastronômica, público jovem universitário
-- **Timeline**: Q1 2025
-- **Investment**: R$ 100k
-
-**5. Recife**
-- **Rationale**: Hub tecnológico do Nordeste, vida noturna intensa
-- **Timeline**: Q2 2025
-- **Investment**: R$ 110k
-
-**6. Salvador**
-- **Rationale**: Turismo + população local, cultura social forte
-- **Timeline**: Q3 2025
-- **Investment**: R$ 120k
-
-### 1.3 Expansão Internacional
-
-#### **Tier 1: América Latina (2025-2026)**
-
-**1. Buenos Aires, Argentina**
-- **Market Size**: 15M (região metropolitana)
-- **Target Demographic**: 2.5M usuários potenciais
-- **Market Readiness**: 88% smartphone, alta adoção de apps
-- **Cultural Fit**: Muito alta (cultura similar, horários noturnos)
-- **Investment Required**: R$ 300k
-- **Timeline**: Q3 2025
-
-**Adaptações Necessárias**:
-```yaml
-Technical:
-  - Spanish language AI training
-  - Argentine Spanish specific expressions
-  - Local payment integration (MercadoPago)
-  - Currency handling (ARS)
-
-Business:
-  - Local partnership for establishment onboarding
-  - Argentina tax compliance
-  - Local marketing team or agency
-  - Banking/payment processing setup
-
-Cultural:
-  - Later dining times (22h-24h normal)
-  - Different tipping culture
-  - Mate culture integration
-  - Local slang and expressions
-```
-
-**2. Santiago, Chile**
-- **Market Size**: 7M (região metropolitana)
-- **Target Demographic**: 1.1M usuários potenciais
-- **Market Readiness**: 92% smartphone, alta renda per capita
-- **Investment Required**: R$ 280k
-- **Timeline**: Q1 2026
-
-**3. Cidade do México, México**
-- **Market Size**: 22M (região metropolitana)
-- **Target Demographic**: 3.5M usuários potenciais
-- **Market Readiness**: 85% smartphone, mercado massive
-- **Investment Required**: R$ 400k
-- **Timeline**: Q3 2026
-
----
 
 ## 2. Expansão de Domínio
 
@@ -555,134 +444,50 @@ CheckIn Work:
 
 ---
 
-## 6. Cronograma de Execução Integrado
 
-### 6.1 Master Timeline (2024-2026)
+## 6. Métricas de Sucesso Consolidadas
 
-#### **2024: Ano da Expansão Nacional**
-```
-Q1 2024:
-├── Core SP consolidation (maintain)
-├── Rio de Janeiro research & setup
-└── CheckIn Events MVP development
-
-Q2 2024:
-├── Rio de Janeiro beta launch
-├── CheckIn Events public launch (SP)
-└── Belo Horizonte research & setup
-
-Q3 2024:
-├── Rio de Janeiro public launch
-├── Belo Horizonte beta launch
-├── CheckIn Events expansion (RJ)
-└── CheckIn Travel MVP development
-
-Q4 2024:
-├── Belo Horizonte public launch
-├── Brasília research & setup
-├── CheckIn Travel beta launch
-└── International market research (Argentina)
-```
-
-#### **2025: Ano da Diversificação**
-```
-Q1 2025:
-├── Brasília beta launch
-├── CheckIn Travel public launch
-├── Porto Alegre research
-└── Buenos Aires detailed planning
-
-Q2 2025:
-├── Brasília public launch
-├── Porto Alegre beta launch
-├── CheckIn Work MVP development
-└── Buenos Aires technical setup
-
-Q3 2025:
-├── Porto Alegre public launch
-├── Buenos Aires beta launch
-├── CheckIn Work beta launch
-└── Santiago research
-
-Q4 2025:
-├── Buenos Aires public launch
-├── CheckIn Work public launch
-├── Recife research
-└── 2026 planning
-```
-
-#### **2026: Ano da Consolidação**
-```
-Q1 2026:
-├── Santiago beta launch
-├── Recife beta launch
-├── All products optimization
-└── Series A preparation
-
-Q2 2026:
-├── Santiago public launch
-├── Recife public launch
-├── México research
-└── Platform consolidation
-
-Q3 2026:
-├── México pilot
-├── Advanced AI features
-├── International expansion evaluation
-└── Strategic partnerships
-
-Q4 2026:
-├── Portfolio optimization
-├── Next phase planning
-├── Market leadership consolidation
-└── IPO readiness assessment
-```
-
----
-
-## 7. Métricas de Sucesso Consolidadas
-
-### 7.1 Geographic Expansion Success Metrics
+### 6.1 Geographic Expansion Success Metrics
 
 #### **Consolidated Geographic KPIs**
 ```yaml
-Brazil Coverage (by end 2025):
+Brazil Coverage (by end 2026):
   cities_active: 6 (SP, RJ, BH, BSB, POA, REC)
   total_mau_brazil: 50,000
   revenue_geographic_expansion: R$ 150k MRR
   market_share_major_cities: 8-12%
 
-International Presence (by end 2026):
+International Presence (by end 2027):
   countries_active: 3 (Brazil, Argentina, Chile)
   total_mau_latam: 75,000
   revenue_international: R$ 80k MRR
   brand_recognition_latam: Top 3 in category
 ```
 
-### 7.2 Domain Expansion Success Metrics
+### 6.2 Domain Expansion Success Metrics
 
 #### **Domain Portfolio Performance**
 ```yaml
-CheckIn Events (by end 2025):
+CheckIn Events (by end 2026):
   events_organized_monthly: 1,500
   tickets_facilitated_monthly: 8,000
   revenue_events: R$ 40k MRR
   nps_events: >75
 
-CheckIn Travel (by end 2025):
+CheckIn Travel (by end 2027):
   experiences_monthly: 800
   tourists_served_monthly: 2,500
   revenue_travel: R$ 50k MRR
   repeat_customer_rate: >60%
 
-CheckIn Work (by end 2026):
+CheckIn Work (by end 2028):
   active_professionals: 5,000
   monthly_connections: 3,000
   revenue_work: R$ 30k MRR
   networking_success_rate: >70%
 ```
 
-### 7.3 Overall Portfolio Health
+### 6.3 Overall Portfolio Health
 
 #### **Portfolio Success Dashboard**
 ```python

@@ -5,6 +5,64 @@ Este canvas define a estratégia abrangente de escalabilidade do CheckIn, cobrin
 
 ---
 
+## Canvas de Planejamento de Escalabilidade
+
+### 1. Objetivo da Escalabilidade
+- Preparar o CheckIN para atender 10x o volume atual mantendo P95 da API < 500 ms e carregamento da home < 2 s, com disponibilidade ≥ 99,9% (12 meses) e ≥ 99,99% (24 meses).
+
+### 2. Volume Esperado de Interações
+- Atual: 10k MAU; ~25k interações/dia; pico ~300 req/s; 500 usuários concorrentes.
+- 12 meses: 100k MAU; ~250k interações/dia; pico ~3k req/s; 5k concorrentes.
+- 24 meses: 1M MAU; ~2M interações/dia; pico ~20k req/s; 50k concorrentes.
+
+### 3. Requisitos de Infraestrutura
+- Compute: Auto-scaling (Kubernetes/containers) com HPA por CPU/latência.
+- Banco: PostgreSQL gerenciado com HA, read replicas, pooling e partições (checkins/reviews).
+- Cache: Redis Cluster (sessões, buscas, recomendações) + rate limiting distribuído.
+- CDN/Edge: Cloudflare para assets/imagens e APIs cacheáveis; workers para respostas geocacheadas.
+- Fila/Mensageria: SQS/Rabbit/Kafka (notificações, ingestão, agregações).
+- Armazenamento: S3/GCS para mídia; backups automáticos; retenção por política.
+- Observabilidade: Prometheus/Grafana + OpenTelemetry/Jaeger; logs centralizados.
+- LLM/APIs externas: quotas, retries exponenciais, circuit breakers e budget mensal.
+
+### 4. Estratégias de Escalabilidade
+- Horizontal: adicionar réplicas de API, workers e serviços stateless atrás de LB.
+- Vertical: aumentar classes de máquina para DB/Redis até limite econômico.
+- Cache: consultas quentes (venues por região, destaques por horário), recomendações por janela curta, CDN para respostas públicas.
+- Banco: índices, partição temporal, réplicas de leitura; CQRS/múltiplos bancos >200k MAU.
+- Assíncrono: filas para notificações/ingestão/analytics; backpressure; debounce contra stampede.
+- Resiliência: circuit breakers, timeouts, retries com jitter; degradação graciosa (heurísticas sem IA).
+- Proteção: rate limiting por IP/usuário/chave; quotas TripAdvisor/Mapas/LLM.
+
+### 5. Custo Estimado (mensal)
+- Atual (~10k MAU): ~R$ 2.000.
+- 100k MAU: Compute R$ 8.000; DB HA R$ 4.000; Redis R$ 1.000; CDN R$ 1.000; Observabilidade R$ 500; LLM/APIs R$ 1.000 → ~R$ 15.500.
+- 1M MAU: Compute R$ 35.000; DB cluster R$ 12.000; Redis R$ 5.000; CDN R$ 3.000; Observabilidade R$ 2.000; LLM/APIs R$ 10.000 → ~R$ 67.000.
+
+### 6. Riscos e Mitigação
+- Rate limits de terceiros: quotas, cache agressivo, múltiplas fontes, fallback local; circuit breakers.
+- Hot partitions no DB: partição temporal + shards lógicos por região; réplicas regionais.
+- Cache stampede: locks distribuídos/early refresh; jitter; stale-while-revalidate.
+- Custos LLM: budget por serviço; modelos menores/on-device; batch/streaming.
+- Incidentes regionais: multi-AZ; DR; backups e testes de restauração.
+- Privacidade/segurança: minimização, criptografia, RBAC, auditoria/DLP.
+
+### 7. Monitoramento de Escalabilidade
+- Técnicas: P95/P99 por rota; throughput; saturação (CPU/mem/IO); erros; filas; hit rate cache/CDN.
+- Produto: tempo até decisão; aceitação de sugestões; conversão check-in/RSVP.
+- Alertas: P95 > 500 ms (5 min); 5xx > 1%; fila > 5 min; CPU > 80% (10 min).
+- Ferramentas: Prometheus/Grafana, OpenTelemetry/Jaeger, logs centralizados, RUM/Synthetics.
+
+### 8. Plano de Teste em Ambiente Escalado
+- Carga (k6/JMeter): normal (1.2x pico), pico (2x), estresse (5x), endurance (4h a 1.5x) com SLAs.
+- Banco: concorrência (pgbench); validação de índices/partições; failover de réplicas.
+- Cache/CDN: hit rate por rota; teste de stampede; invalidação.
+- Resiliência: chaos engineering (pods/zonas); DR drills; simulações de queda LLM/TripAdvisor.
+- Go/No-Go: checklist de readiness (técnico, custo, SLO de produto) por fase.
+
+Periodicidade: revisar e atualizar antes de cada ciclo trimestral de escala.  
+Ferramentas: Miro/Docs para documentação; Grafana para painéis; runbooks versionados no Git.
+
 ## 1. Arquitetura de Escalabilidade Técnica
 
 ### 1.1 Current State vs Target State
@@ -648,32 +706,6 @@ class ContentModerationScaling:
 
 ### 5.1 Unit Economics at Scale
 
-#### **Cost Structure Evolution**
-```yaml
-Current Costs (10k MAU):
-  infrastructure: R$ 2,000/month
-  team: R$ 45,000/month  
-  external_services: R$ 1,500/month
-  marketing: R$ 8,000/month
-  total: R$ 56,500/month
-  cost_per_user: R$ 5.65/month
-
-Target Costs (100k MAU):
-  infrastructure: R$ 15,000/month
-  team: R$ 120,000/month
-  external_services: R$ 12,000/month
-  marketing: R$ 30,000/month
-  total: R$ 177,000/month
-  cost_per_user: R$ 1.77/month
-
-Target Costs (1M MAU):
-  infrastructure: R$ 80,000/month  
-  team: R$ 400,000/month
-  external_services: R$ 60,000/month
-  marketing: R$ 100,000/month
-  total: R$ 640,000/month
-  cost_per_user: R$ 0.64/month
-```
 
 #### **Revenue Scaling Model**
 ```python
@@ -726,44 +758,6 @@ class RevenueScalingModel:
             growth_factors=self.calculate_growth_factors(user_count)
         )
 ```
-
-### 5.2 Funding and Investment Strategy
-
-#### **Capital Requirements by Scale**
-```yaml
-Series A (Scale to 100k users):
-  target_amount: "R$ 5M"
-  timeline: "Q2 2024"
-  use_of_funds:
-    team_expansion: 40%
-    infrastructure: 20%
-    marketing: 25%
-    product_development: 10%
-    working_capital: 5%
-  
-Series B (Scale to 1M users):
-  target_amount: "R$ 20M"
-  timeline: "Q4 2025"
-  use_of_funds:
-    geographic_expansion: 35%
-    team_expansion: 30%
-    infrastructure: 15%
-    marketing: 15%
-    working_capital: 5%
-
-Series C (International expansion):
-  target_amount: "R$ 50M"
-  timeline: "Q2 2027"
-  use_of_funds:
-    international_expansion: 50%
-    product_diversification: 20%
-    team_expansion: 15%
-    infrastructure: 10%
-    working_capital: 5%
-```
-
----
-
 ## 6. Monitoring e Observabilidade na Escala
 
 ### 6.1 Metrics and Monitoring Strategy
@@ -914,66 +908,8 @@ class FailureModeAnalysis:
 
 ## 8. Timeline e Roadmap de Escalabilidade
 
-### 8.1 Master Scalability Timeline
 
-#### **Phase-by-Phase Scaling Plan**
-```yaml
-Phase 1: Foundation (10k -> 50k users) - Q1-Q2 2024:
-  technical:
-    - Database optimization and indexing
-    - Basic caching implementation
-    - API performance improvements
-    - Monitoring setup
-  
-  organizational:
-    - Hire 2 senior engineers
-    - Implement formal code review
-    - Setup CI/CD pipeline
-    - Establish SLAs
-  
-  financial:
-    - Optimize cost per user from R$ 5.65 to R$ 3.50
-    - Target 50% gross margin
-    - Series A preparation
-
-Phase 2: Growth (50k -> 200k users) - Q3 2024-Q1 2025:
-  technical:
-    - Microservices architecture
-    - Horizontal database scaling
-    - Advanced caching strategies
-    - Real-time monitoring
-  
-  organizational:
-    - Engineering team to 12 people
-    - Dedicated DevOps team
-    - Support team expansion
-    - Process formalization
-  
-  financial:
-    - Cost per user to R$ 2.00
-    - Series A execution
-    - Revenue diversification
-
-Phase 3: Scale (200k -> 1M users) - Q2 2025-Q4 2025:
-  technical:
-    - Full microservices + event-driven
-    - Multi-region deployment
-    - Edge computing implementation
-    - AI/ML optimization
-  
-  organizational:
-    - Engineering team to 25+ people
-    - Management layer addition
-    - 24/7 operations team
-    - Global support structure
-  
-  financial:
-    - Cost per user to R$ 0.80
-    - Series B preparation
-    - International expansion funding
-```
-
-### 8.2 Critical Milestones and Decision Points
+### 8.1 Critical Milestones and Decision Points
 
 #### **Go/No-Go Decision Framework**
 ```python

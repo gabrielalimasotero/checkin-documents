@@ -742,33 +742,33 @@ Ethical Commitments:
 ```yaml
 User Scale Metrics:
   monthly_active_users:
-    2025: 500k MAU
+    2026: 500k MAU
     2027: 5M MAU  
     2030: 25M MAU
     
   geographic_coverage:
-    2025: 8 cities (Brazil)
+    2026: 8 cities (Brazil)
     2027: 30 cities (5 countries)
     2030: 100+ cities (15 countries)
     
   network_density:
-    2025: "Average 50 friends per user"
+    2026: "Average 50 friends per user"
     2027: "Average 100 friends per user"
     2030: "Average 200 friends per user"
 
 Business Scale Metrics:
   annual_recurring_revenue:
-    2025: R$ 15M ARR
+    2026: R$ 15M ARR
     2027: R$ 150M ARR
     2030: R$ 1B ARR
     
   platform_transactions:
-    2025: R$ 100M GMV
+    2026: R$ 100M GMV
     2027: R$ 2B GMV
     2030: R$ 20B GMV
     
   ecosystem_value:
-    2025: R$ 500M total ecosystem value
+    2026: R$ 500M total ecosystem value
     2027: R$ 10B total ecosystem value
     2030: R$ 100B total ecosystem value
 ```
