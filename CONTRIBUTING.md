@@ -27,6 +27,8 @@ git checkout -b feat/venue-suggestions
 ```
 
 3. Make your changes
+   - Follow the stacks defined in README (FastAPI + PostgreSQL on backend; React + TypeScript + Vite + Tailwind + shadcn/ui on frontend)
+   - Keep API contracts in sync (see Venue shape in documentation). If backend changes types (e.g., `latitude`/`longitude` to string), update frontend typings and docs.
 4. Commit your changes with a descriptive message:
 
 ```bash
@@ -62,6 +64,10 @@ Before submitting a PR, make sure that:
 - Documentation has been updated (if necessary)
 - Code follows the design system and component patterns
 - TypeScript types are properly defined
+  - Especially API interfaces (e.g., `Venue`):
+    - `latitude`/`longitude`: `string | null`
+    - `price_range`: `string | null`
+    - `features`: `string | null` (string with values separated by comma/semicolon)
 
 ---
 

@@ -24,7 +24,7 @@ git clone https://github.com/CHMFC/checkin-backend.git
 
 ### Prerequisites
 
-- Python 3.9+
+- Python 3.8+
 - PostgreSQL
 - pip + venv
 
@@ -44,14 +44,13 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env with your credentials
 
-# Apply migrations
-alembic upgrade head
-
-# Run server
+# Run server (choose one)
+python run.py
+# or
 uvicorn app.main:app --reload
 ```
 
-The API will be accessible at: http://127.0.0.1:8000  
+The API will be accessible at: http://127.0.0.1:8000
 Documentation: `/docs` (Swagger) or `/redoc`
 
 ---
@@ -71,11 +70,18 @@ cd checkin-frontend
 # Install dependencies
 npm install  # or yarn install or bun install
 
+# Environment
+# Create `.env.local` and set at least:
+# VITE_API_BASE_URL=http://127.0.0.1:8000
+# VITE_SUPABASE_URL=... (see SUPABASE_SETUP.md in frontend)
+# VITE_SUPABASE_ANON_KEY=...
+
 # Run development server
 npm run dev  # or yarn dev or bun dev
 ```
 
 The application will be accessible at: http://localhost:5173
+Ensure the backend is running and `VITE_API_BASE_URL` points to it.
 
 ---
 
