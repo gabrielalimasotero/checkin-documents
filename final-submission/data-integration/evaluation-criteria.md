@@ -5,6 +5,26 @@
 ### Os dados foram preparados de forma adequada?
 Sim. As informações obtidas do TripAdvisor passaram por um processo de extração, transformação e carga (ETL), sendo organizadas em formatos estruturados JSON e CSV, além de já estarem disponíveis no banco de dados para uso direto pelo sistema. Durante essa preparação, foram realizados tratamentos para dados ausentes, padronização de campos, unificação de categorias e verificação de integridade, assegurando que os dados estejam consistentes e prontos para utilização na aplicação.
 
+## Obtenção dos dados para popular o banco via Webscraping no TripAdvisor
+
+Descreveremos o processo de coleta de dados de restaurantes de Recife no TripAdvisor, utilizando uma combinação de scripts em Python, Bash e JavaScript, além do uso da extensão Tampermonkey para automatizar a extração.
+
+1. Primeira Implementação com Selenium
+A primeira tentativa foi utilizar Selenium em Python para simular um navegador e coletar os dados diretamente das páginas. Porém, o TripAdvisor detectou facilmente a automação, o que inviabilizou essa abordagem inicial.
+
+2. Uso do Console do Navegador para Extração Manual
+Como alternativa, passamos a utilizar scripts de JavaScript diretamente no console do navegador para extrair os links das páginas de restaurantes. Assim, conseguimos gerar um arquivo de texto com as URLs dos restaurantes de Recife.
+
+3. Automatização via Bash e Tampermonkey
+Para contornar a detecção automatizada e tornar o processo repetitivo, utilizamos um script em Bash que abria o Google Chrome com as URLs coletadas. Usando a extensão Tampermonkey, injetamos um script que rodava ao carregar a página, extraindo automaticamente os dados de cada restaurante.
+
+4. Coleta de Features Específicas
+Durante o processo, foi possível coletar informações detalhadas como acessibilidade (cadeirinha para bebê), estacionamento, se o restaurante aceita pets, tipos de cartão aceitos, entre outros. Essas informações foram agrupadas e consolidadas em um arquivo CSV ao final.
+
+5. Desafios e Considerações Finais
+O TripAdvisor apresenta desafios por não permitir facilmente esse tipo de scraping, o que exigiu essa abordagem mais criativa. Sem essa solução híbrida, não teríamos conseguido entregar os dados.
+
+
 ### Há estratégias claras para alimentar e manter o sistema atualizado?
 Sim. Estratégias definidas para atualização contínua e confiável:
 - Agendamento e incremental: rotinas de ingestão incremental (ex.: cron) com janelas de atualização definidas (ex.: diária/horária) e capacidade de reprocessamento (backfill).
